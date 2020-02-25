@@ -1,0 +1,84 @@
+.main{
+    width: 99%;
+    height: 500px;
+    margin-top: 5px;
+    margin-left: 5px;
+    background-color: #FFFFFF;
+    border: 1px solid #f4f6f6;
+    box-shadow: #666 0px 0px 10px;
+}
+
+.page-total{
+    width: 98%;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: #1abc9c;
+}
+
+.page-total-content{
+    width: 99.7%;
+    height: 50px;
+    margin-left: 5px;
+    padding-top: 14px;
+    padding-left: 20px;
+    font-size: 15px;
+    color: #6f6f6f;
+    background-color: #ecf0f1;
+
+}
+
+.page-table{
+    width: 98%;
+    height: auto;
+    margin-top: 0px;
+    margin-left: 10px;
+    /*background-color: #1abc9c;*/
+}
+
+.glyphicon{
+    top: 2px;
+}
+
+.grid{
+    width: 100%;
+    height: 120px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+}
+
+#toolbar{
+    width: 1315px;
+}
+
+.grid-form-group{
+    margin-left: 520px;
+    margin-top: 15px;
+}
+
+.grid-group-label{
+    width: 70px;
+    float: left;
+    padding-top: 7px;
+    padding-left: 10px;
+}
+
+.grid-group-select{
+    width: 20%;
+    float: left;
+}
+
+.grid-operational-button{
+    width: 100%;
+    margin-left: 550px;
+}
+
+.editable-buttons{
+    margin-top: 10px;
+
+    text-align: center;
+}
+
+.editable-cancel{
+    margin-left: 15px;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>卡片详情页面</title>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/bootstrap-theme.css">
+    <!-- 引入Bootstrap-table样式 -->
+    <link rel="stylesheet" href="../../utils/bootstrap-table/bootstrap-table.css">
+    <link rel="stylesheet" href="../../utils/bootstrap-table/bootstrap-editable.css">
+    <link rel="stylesheet" href="detail-cardList.css">
+
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.js"></script>
+    <script src="../../js/response.js"></script>
+    <script src="../../js/getUrlParam.js"></script>
+    <script src="detail-cardList.js"></script>
+    <!-- 引入Bootstrap-table js -->
+    <script src="../../utils/bootstrap-table/bootstrap-table.js"></script>
+    <script src="../../utils/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+    <script src="../../utils/bootstrap-table/bootstrap-table-editable.js"></script>
+    <script src="../../utils/bootstrap-table/bootstrap-editable.min.js"></script>
+</head>
+<body>
+    <div class="col-md-12 div-table">
+        <div class="head">
+            <div class="cardNumber">卡片1</div>
+            <button class="save btn btn-primary" data-toggle="modal" data-target="#myModal">保存到仪表盘</button>
+            <button class="search" id="hideORsearch">隐藏/显示查询</button>
+            <button class="search" onclick="javascript:history.back(-1)">返回上一页</button>
+        </div>
+        <input class="input"/>
+        <button class="search refresh">刷新</button>
+        <div class="div-data-table">
+            <table id="table"></table>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="header">
+                    <h5 id="myModalLabel">选择仪表盘</h5>
+                </div>
+                <div class="body">
+                    <table id="checkDash"></table>
+                    <ul>
+                        <li>仪表盘1</li>
+                        <li>仪表盘2</li>
+                        <li>仪表盘3</li>
+                    </ul>
+                </div>
+                <div class="footer">
+                    <button type="button" class="cancel btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

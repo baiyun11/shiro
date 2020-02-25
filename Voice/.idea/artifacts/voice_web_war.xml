@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="voice-web:war">
+    <output-path>$PROJECT_DIR$/voice-web/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>voice-web</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="yrz.war">
+      <element id="artifact" artifact-name="voice-web:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,26 @@
+.title{
+    margin-top: 8px;
+    margin-left: 10px;
+}
+
+
+.count{
+    overflow: auto;
+}
+
+.count2{
+    margin-left:30px;
+}
+
+.layui-form-label{
+    width: 15%;
+    float: left;
+}
+
+.layui-input-block{
+    margin-bottom: 10px;
+}
+
+.layui-input{
+    width: 75%;
+}

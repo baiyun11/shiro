@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>配置管理-推送管理</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+<div class="headerTop"></div>
+<div class="container">
+    <div class="row content">
+        <div class="col-xs-3 sidebar left_nav" name="topNavBasis_2">
+            <ul class="nav nav-sidebar yY_left">
+                <li class="left_nav_choose"><a class="left_nav_choose_ys" href="pushManagement.html">推送版本管理</a></li>
+            </ul>
+        </div>
+        <div class="col-xs-9 main">
+            <p class="main-top">
+                <button type="button" class="btn add_btn" id="addPushEdtion" data-toggle="modal" data-target=".bs-example-modal-lg">添加推送版本</button>
+                <a id="backPage" href="javascript:history.go(-1)">返回上一页</a>
+            </p>
+            <div class="table-responsive main_table">
+                <table class="table table-striped">
+                    <thead>
+                    <tr class="table_title">
+                        <th><div class="version_1">推送版本号</div></th>
+                        <!--<th><div class="term">推送有效期(天)</div></th>-->
+                        <th><div class="issue_1">操作</div></th>
+                        <th><div class="username">创建人</div></th>
+                        <th><div class="date_time">创建日期</div></th>
+                    </tr>
+                    </thead>
+                    <tbody id="pushEdtion">
+
+                    </tbody>
+                </table>
+            </div>
+            <nav aria-label="Page navigation" class="page_navigation">
+                <ul class="pagination" id="page">
+
+                </ul>
+                <span id="skip"> 跳转到第 <input id="skipPage" type="text"
+                                             value="" /> 页
+						<button id="skipBtn" type="button">确定</button>
+					</span> <span id="num_pages"></span> <span id="num_lists"></span>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modalEdition" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">添加推送版本号</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="addEdition">
+                    <div class="form-group change-group">
+                        <label for="pushEditionVal" class="col-sm-2 control-label inputName1">版本号：</label>
+                        <div class="col-sm-10 inputText1">
+                            <input type="text" class="form-control" id="pushEditionVal" name="pushEditionVal" disabled="disabled" placeholder="请输入版本号...">
+                        </div>
+                    </div>
+                    <!--<div class="form-group change_group">-->
+                        <!--<label for="pushTerm" class="col-sm-2 control-label inputName1">推送有效期(天)：</label>-->
+                        <!--<div class="col-sm-10 inputText1">-->
+                            <!--<input type="text" class="form-control" id="pushTerm" name="pushTerm" placeholder="请输入推送有效期...">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </form>
+                <div class="alert alert-warning alert-dismissible fade in" role="alert"></div>
+            </div>
+            <div class="modal-footer">
+                <div class="form-group change_group add_Button">
+                    <button type="submit" class="btn btnAdd" id="addPushEditionBtn">添加</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="alertSuccess">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap-paginator.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pushManagement.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>数据统计分析-位置数据分析</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+        <link rel="stylesheet" href="css/base.css">
+    </head>
+    <body>
+		<div class="headerTop"></div>
+		<div class="container">
+			<div class="row content">
+				<div class="col-xs-3 sidebar left_nav" name="topNavBasis_0">
+					<ul class="nav nav-sidebar yY_left">
+						<li>
+							<a href="javascript:;" id="collapseListGroupHeading2" data-toggle="collapse" data-target="#collapseListGroup2" role="tab">话术分析</a>
+							<ul class="twoMenu collapse in" id="collapseListGroup2" role="tabpanel" aria-labelledby="collapseListGroupHeading2">
+							<!-- <a href="dataAnalysis.html">话术分析</a>
+							<ul class="twoMenu"> -->
+								<li><a href="dataAnalysis.html">原始话术分析</a></li>
+								<li><a href="erroneousExecution.html">错误话术分析</a></li>
+								<li><a href="toBeConfirm.html">待确认话术分析 </a></li>
+								<li><a href="nlp.html">Nlp管理</a></li>
+							</ul>
+						</li>
+						<li class="left_nav_choose"><a class="left_nav_choose_ys" href="positionAnalysis.html">位置数据分析</a></li>
+						<li>
+							<a href="wakeUp.html">唤醒类</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-xs-9 main">
+					<p class="main-top">
+						<a id="backPage" href="javascript:history.go(-1)">返回上一页</a>
+					</p>
+					<div class="table-responsive main_table">
+						<table class="table table-striped">
+							<thead>
+								<tr class="table_title">
+									<th><div class="powerDA">档位</div></th>
+									<th><div class="lonDA">经度</div></th>
+									<th><div class="latDA">纬度</div></th>
+									<th><div class="speedDA">车速</div></th>
+									<th><div class="date_time">时间</div></th>
+									<th><div class="operation">操作</div></th>
+								</tr>
+							</thead>
+							<tbody id="positionAnalysis">
+								
+							</tbody>
+						</table>
+					</div>
+					<nav aria-label="Page navigation"  class="page_navigation">
+						<ul class="pagination" id="page">
+							
+						</ul>
+						<span id="skip">
+							跳转到第
+							<input id="skipPage" type="text" value="" />
+							页
+							<button id="skipBtn" type="button">确定</button>
+						</span>
+						<span id="num_pages"></span>
+						<span id="num_lists"></span>
+					</nav>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal -->
+		<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="lookModalLabel" id="poi">
+  			<div class="modal-dialog modal-lg" role="document">
+		    	<div class="modal-content">
+		      		<div class="modal-header">
+		        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        		<h4 class="modal-title" id="myModalLabel">Position data analysis</h4>
+		      		</div>
+		      		<div class="modal-body">
+		        		<div class="lt_uploadHeader">
+		        			<table class="table table-striped">
+								<tbody id="poiData">
+									
+								</tbody>
+		        			</table>
+		        		</div>
+		      		</div>
+		      		<div class="modal-footer">
+				    	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				    </div>
+		    	</div>
+		  	</div>
+		</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/bootstrap-paginator.js"></script>
+	<script src="js/positionAnalysis.js"></script>
+	<script src="js/common.js"></script>
+    </body>
+</html>

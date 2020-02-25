@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据统计分析-唤醒类</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+    <div class="headerTop"></div>
+    <div class="container">
+        <div class="row content">
+            <div class="col-xs-3 sidebar left_nav" name="topNavBasis_0">
+                <ul class="nav nav-sidebar yY_left">
+                    <li>
+                        <a href="javascript:;" id="collapseListGroupHeading2" data-toggle="collapse" data-target="#collapseListGroup2" role="tab">话术分析</a>
+                        <ul class="twoMenu collapse in" id="collapseListGroup2" role="tabpanel" aria-labelledby="collapseListGroupHeading2">
+                            <li><a href="dataAnalysis.html">原始话术分析</a></li>
+                            <li><a href="erroneousExecution.html">错误话术分析</a></li>
+                            <li><a href="toBeConfirm.html">待确认话术分析 </a></li>
+                            <li><a href="nlp.html">Nlp管理</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="positionAnalysis.html">位置数据分析</a>
+                    </li>
+                    <li class="left_nav_choose">
+                        <a class="left_nav_choose_ys" href="wakeUp.html">唤醒类</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-9 main">
+                <div class="searchData">
+                    <form class="form-search">
+                        <input type="text" class="input-medium search-query" id="wakeUpVinVal" placeholder="请输入要查询的车架号...">
+                        <button type="button" class="btn" id="searchwakeUpBtn">查询</button>
+                    </form>
+                    <a id="backPage" href="javascript:history.go(-1)">返回上一页</a>
+                </div>
+                <div class="table-responsive main_table">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr class="table_title">
+                            <th><div class="oderNum">序号</div></th>
+                            <th><div class="AutoVINDA">车架号</div></th>
+                            <th><div class="wordType">唤醒方式</div></th>
+                            <th><div class="rawTextDA">唤醒词</div></th>
+                            <th><div class="date_time">唤醒时间</div></th>
+                        </tr>
+                        </thead>
+                        <tbody id="wakeUpBox">
+
+                        </tbody>
+                    </table>
+                </div>
+                <nav aria-label="Page navigation"  class="page_navigation">
+                    <ul class="pagination" id="page">
+
+                    </ul>
+                    <span id="skip">
+							跳转到第
+							<input id="skipPage" type="text" value="" />
+							页
+							<button id="skipBtn" type="button">确定</button>
+						</span>
+                    <span id="num_pages"></span>
+                    <span id="num_lists"></span>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-paginator.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/wakeUp.js"></script>
+</body>
+</html>

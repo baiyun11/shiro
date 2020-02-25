@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>系统管理-用户列表-修改角色</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/role.css">
+</head>
+<body>
+<div class="headerTop"></div>
+<div class="container">
+    <div class="row content">
+        <div class="col-xs-3 sidebar left_nav" name="topNavBasis_3">
+            <ul class="nav nav-sidebar yY_left">
+                <li class="left_nav_choose"><a class="left_nav_choose_ys" href="roleList.html">角色管理</a></li>
+                <li><a href="userManagement.html">用户管理</a></li>
+            </ul>
+        </div>
+        <div class="col-xs-9 main">
+            <p class="maintop ">
+                <span class="main-top-title">修改角色</span>
+                <a id="backPage" href="javascript:history.go(-1)">返回上一页</a>
+            </p>
+
+            <div class="modal-body bodercolor">
+                <form class="form-horizontal" id="addRole">
+                    <div class="form-group change_group">
+                        <label class="control-label roleleft">新名称</label>
+                        <div class="col-sm-10 inputText1 afterrole">
+                            <input type="text" class="form-control" id="account">
+                        </div>
+                    </div>
+                    <div class=" change_group">
+                        <label class="control-label roleleft" style="float: left;">所属权限</label>
+                        <div class="checkAll"><label><input type="checkbox" id="chksAll" />全选</label></div>
+                        <div id="roleUl"></div>
+                    </div>
+                </form>
+                <div class="three">
+                    <!--<button type="button" class="tijiao" id="editRoleBtn" >提交</button>-->
+                    <button type="button" class="btn btn-info notarize" id="editRoleBtn">确认</button>
+                    <!--<button type="reset" class="btn btn-warning" id="resetBtn">重置</button>-->
+                    <a class="btn btn-default cancel" href="roleList.html">取消</a>
+                    <!--<a  href="javascript:history.go(-1)" class="comeback">返回上一页</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-paginator.js"></script>
+    <script src="js/getUrlParam.js"></script>
+    <script src="js/roleList.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/editRole.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="voice-service" />
+        <module name="voice-pojo" />
+        <module name="voice-dao" />
+        <module name="voice-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="voice-aggregator" target="1.8" />
+      <module name="voice-dao" target="1.8" />
+      <module name="voice-parent" target="1.8" />
+      <module name="voice-pojo" target="1.8" />
+      <module name="voice-service" target="1.8" />
+      <module name="voice-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

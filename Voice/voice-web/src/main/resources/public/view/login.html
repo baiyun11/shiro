@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>登录</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.css">
+	<link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+	<div class="container loginBg">
+		<!--  <div style="position:fixed;top:0;left:0;"><img src="images/login_bg.png" witdh="auto" height="auto" /></div>-->
+		<div class="login">
+			<form class="form-horizontal" enctype="multipart/form-data">
+				<h2 class="h2 loginTitle">语音管理平台</h2>
+			  	<div class="form-group loginGroup">
+			    	<label for="loginUser" class="col-sm-2 control-label">用户名</label>
+			    	<div class="col-sm-10">
+			      		<input type="text" class="form-control" name="username" id="loginUser" placeholder="请输入用户名..." data-trigger="focus" data-placement="bottom" >
+			    	</div>
+			  	</div>
+			  	<div class="form-group loginGroup">
+			    	<label for="loginPassword" class="col-sm-2 control-label">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+			    	<div class="col-sm-10">
+			      		<input type="password" class="form-control" name="password" id="loginPassword" placeholder="请输入密码..." data-trigger="focus" data-placement="bottom">
+			    	</div>
+			  	</div>
+			  	<div class="alert alert-danger alert-dismissible fade in" role="alert"></div>
+				<div class="form-group loginGroup">
+			    	<div class="btnBox">
+			      		<button type="button" class="btn loginBtn">登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+			    	</div>
+		  		</div>
+			</form>
+		</div>
+	</div>
+	<!--修改密码的modal start-->
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modalLogin" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog passwordModal" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close"  id="closeBox" data-dismiss="modal"
+							aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">请修改您的密码</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal">
+						<div class="form-group change_group">
+							<label for="newPassWord" class="col-sm-2 control-label inputName1">新密码：</label>
+							<div class="col-sm-10 inputText1">
+								<input type="text" class="form-control" id="newPassWord" name="account" placeholder="请输入新密码...">
+								<p>密码由至少6位字母、数字和字符混合组成，修改密码后，请重新登录。</p>
+							</div>
+						</div>
+						<div class="alert alert-warning alert-dismissible fade in alertPW" role="alert"></div>
+					</form>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info" id="addReviseBtn">确定修改</button>
+					<button type="button" class="btn btn-default" id="cancelLogin" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--修改密码的modal start-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/login.js"></script>
+</body>
+</html>

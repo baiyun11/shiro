@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>数据统计分析-话术分析-执行错误话术</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+        <link rel="stylesheet" href="css/base.css">
+    </head>
+    <body>
+	<div class="headerTop"></div>
+		<div class="container">
+			<div class="row content">
+				<div class="col-xs-3 sidebar left_nav" name="topNavBasis_0">
+					<ul class="nav nav-sidebar yY_left">
+						<li class="left_nav_choose">
+							<a class="left_nav_choose_ys" href="javascript:;" id="collapseListGroupHeading2" data-toggle="collapse" data-target="#collapseListGroup2" role="tab">话术分析</a>
+							<ul class="twoMenu collapse in" id="collapseListGroup2" role="tabpanel" aria-labelledby="collapseListGroupHeading2">
+							<!-- <a class="left_nav_choose_ys" href="dataAnalysis.html">话术分析</a>
+							<ul class="twoMenu"> -->
+								<li><a href="dataAnalysis.html">原始话术分析</a></li>
+								<li><a href="erroneousExecution.html">错误话术分析</a></li>
+								<li class="twoMenuBG"><a class="menuColor" href="toBeConfirm.html">待确认话术分析 </a></li>
+								<li><a href="nlp.html">Nlp管理</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="positionAnalysis.html">位置数据分析</a>
+						</li>
+						<li>
+							<a href="wakeUp.html">唤醒类</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-xs-9 main">
+					<!-- Nav tabs -->
+				  	<ul class="nav nav-tabs mainTabs" role="tablist" id="myTabs">
+					    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">待确认话术分析</a></li>
+					    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">人工正确话术分析</a></li>
+					    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">人工错误话术分析</a></li>
+					</ul>
+					<a id="backPage" href="javascript:history.go(-1)">返回上一页</a>
+				  	<!-- Tab panes -->
+				  	<div class="tab-content">
+					    <div role="tabpanel" class="tab-pane active" id="home">
+					    	<div class="searchData">
+								<form class="form-search">
+		      						<input type="text" class="input-medium search-query" id="toBeConfirmServiceId" placeholder="请输入要查询的服务码">
+		      						<button type="button" class="btn" id="toBeConfirmServiceIdBtn">查询</button>
+		    					</form>
+
+							</div>
+							<div class="table-responsive main_table">
+								<table class="table table-striped">
+									<thead>
+										<tr class="table_title">
+											<th><div class="rawTextDA">话术</div></th>
+											<th><div class="serviceDA">原始话术ID</div></th>
+											<th><div class="serviceIdDA">服务码</div></th>
+											<th><div class="AutoVINDA">服务说明</div></th>
+											<th><div class="operation">操作</div></th>
+										</tr>
+									</thead>
+									<tbody id="toBeConfirm">
+										
+									</tbody>
+								</table>
+
+							</div>
+					    </div>
+					    <div role="tabpanel" class="tab-pane" id="profile">
+					    	<div class="searchData">
+								<form class="form-search">
+		      						<input type="text" class="input-medium search-query" id="AconfirmServiceId" placeholder="请输入要查询的服务码">
+		      						<button type="button" class="btn" id="AconfirmServiceIdBtn">查询</button>
+		    					</form>
+		    					<!--<a id="backPage" href="javascript:history.go(-1)">返回上一页</a>-->
+							</div>
+							<div class="table-responsive main_table">
+								<table class="table table-striped">
+									<thead>
+										<tr class="table_title">
+											<th><div class="rawTextDA">话术</div></th>
+											<th><div class="serviceDA">原始话术ID</div></th>
+											<th><div class="serviceIdDA">服务码</div></th>
+											<th><div class="AutoVINDA">服务说明</div></th>
+											<th><div class="AutoVINDA">修改用户</div></th>
+											<th><div class="date_time">时间</div></th>
+										</tr>
+									</thead>
+									<tbody id="artificialCorrect">
+										
+									</tbody>
+								</table>
+							</div>
+					    </div>
+					    <div role="tabpanel" class="tab-pane" id="messages">
+					    	<div class="searchData">
+								<form class="form-search">
+		      						<input type="text" class="input-medium search-query" id="AErrorServiceId" placeholder="请输入要查询的服务码">
+		      						<button type="button" class="btn" id="AErrorServiceIdBtn">查询</button>
+		    					</form>
+							</div>
+							<div class="table-responsive main_table">
+								<table class="table table-striped">
+									<thead>
+										<tr class="table_title">
+											<!--  <th><div class="checkbox">mark</div></th>-->
+											<th><div class="rawTextDA">话术</div></th>
+											<th><div class="serviceDA">原始话术ID</div></th>
+											<th><div class="serviceIdDA">服务码</div></th>
+											<th><div class="AutoVINDA">服务说明</div></th>
+											<th><div class="AutoVINDA">修改用户</div></th>
+											<th><div class="date_time">时间</div></th>
+											<!--<th><div class="operation">操作</div></th> -->
+										</tr>
+									</thead>
+									<tbody id="artificialError">
+										
+									</tbody>
+								</table>
+							</div>
+					    </div>
+
+				  	</div>
+					<nav aria-label="Page navigation"  class="page_navigation">
+						<ul class="pagination" id="page">
+							
+						</ul>
+						<span id="skip">
+							跳转到第
+							<input id="skipPage" type="text" value="" />
+							页
+							<button id="skipBtn" type="button">确定</button>
+						</span>
+						<span id="num_pages"></span>
+						<span id="num_lists"></span>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="js/bootstrap-paginator.js"></script>
+		<script src="js/toBeConfirm.js"></script>
+		<script src="js/common.js"></script>
+    </body>
+</html>

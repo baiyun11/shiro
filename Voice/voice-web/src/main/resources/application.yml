@@ -1,0 +1,40 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    database: MYSQL
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  profiles:
+# # 默认的profile为dev，其他环境通过指定启动参数使用不同的profile，比如：
+# #   测试环境：java -jar voicePlatform.jar --spring.profiles.active=test
+# #   生产环境：java -jar voicePlatform.jar --spring.profiles.active=product
+    active: dev
+
+  context-path: /
+  jmx:
+    default-domain: test
+  jackson:
+    default-property-inclusion: non_empty
+#数据库加密使用的salt值
+#jasypt.encryptor.password: e9fbdb2d3b21
+project:
+  name: '@project.name@'
+  version: '@project.parent.version@'
+  packageTime: '@timestamp@'
+
+swagger:
+  resourcePackage: com.driveasstes.controller
+  title: 后台管理系统接口文档
+  version: '@project.parent.version@'
+
+# 解决swagger的官方文档中介绍是一个bug
+# 在使用@ApiModelProperty注解在字段上时，如果字段的类型为Long或是int类型，
+# 那么程序启动后，访问swagger-ui.html的页面，程序会报错
+# java.lang.NumberFormatException: For input string: ""
+# 添加下列配置
+logging:
+  level:
+    io.swagger.models.parameters.AbstractSerializableParameter: error
+
+
+

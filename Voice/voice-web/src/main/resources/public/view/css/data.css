@@ -1,0 +1,105 @@
+.outside{
+	margin:0 5%;
+}
+
+.outside div{
+	overflow: auto;
+}
+
+.shadowcolor{
+	width:auto;
+	height:35px;
+	line-height:35px;
+	background:white;
+	margin:15px 10px 0 10px;
+	box-shadow: 0px 0px 4px -2px #ccc;
+	border-radius:4px;
+}
+.back{
+	background-color:white;
+	margin:0 10px 0 10px;
+	box-shadow: 0px 0px 4px -2px #ccc;
+	border-radius:4px;
+}
+.buttonsizefirst{
+	margin-top:10px;
+	padding: 20px 0 60px 0;
+	/*overflow: auto;*/
+}
+.buttonsize{
+	/*width:600px;*/
+	/*margin-left:60px;*/
+	/*margin:45px 0 0 0;*/
+	clear: both;
+}
+input[type="checkbox"].betweensize{
+	margin-right:20px;
+}
+.onleft{
+	float:left;
+	margin-left:30px;
+	color:darkgrey;
+}
+.labelsize{
+	/*width:600px;*/
+	border:1px;
+	border-color:#cccccc; 
+}
+
+#dataTime,#messadeNum,#timeInterval,#netWork{
+	width:80px;
+	display:inline;
+	margin-right:10px;
+}
+
+.inputBox{
+	float: left;
+	/*margin-right: 100px;*/
+	width:100%;
+}
+
+.inputBox ul {
+	width:100%;
+	overflow: auto;
+	border-bottom:1px dashed #ddd;
+	line-height: 45px;
+	padding-top:7px;
+}
+
+.inputBox ul li {
+	float: left;
+	margin: 0 10px;
+}
+
+#backPage.dataBack{
+	line-height:35px;
+}
+
+.warning{
+	width:366px;
+	text-align:center;
+	height:30px;
+	line-height:30px;
+	border:1px solid #ebccd1;;
+	border-radius:4px;
+	color:#a94442;
+	background: #f2dede;
+	margin-bottom:10px;
+	display:none;
+	overflow: auto;
+	clear: both;
+}
+
+.config-remind-lable{
+	float: left;
+}
+
+.config-remind-div{
+	width: 400px;
+}
+
+.config-remind-input{
+	width: 150px;
+	float: left;
+	margin-top: 5px;
+}

@@ -1,0 +1,39 @@
+[
+	{
+		"id": 1,
+		"title" : "数据报表",
+		"name" : "systemManage",
+		"level": 1
+	},
+	{
+		"id": 2,
+		"title" : "配置管理",
+		"name" : "newActivity",
+		"level": 1
+	},
+	{
+		"id": 3,
+		"title" : "推送管理",
+		"name" : "newActivity",
+		"level": 1
+	},
+	{
+		"id": 4,
+		"title" : "系统管理",
+		"name" : "newActivity",
+		"level": 1
+	},
+	{
+		"id": 5,
+		"title" : "数据统计图",
+		"name" : "newActivity",
+		"level": 1
+	},
+	{
+		"id": 6,
+		"title" : "可视化配置",
+		"name" : "newActivity",
+		"level": 1
+	}
+
+]

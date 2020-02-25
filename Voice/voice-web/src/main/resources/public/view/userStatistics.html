@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>配置管理-用户统计图</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/data.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+</head>
+<body>
+<div class="headerTop"></div>
+<div class="container">
+    <div class="row content">
+        <div class="col-xs-3 sidebar left_nav" name="topNavBasis_4">
+            <ul class="nav nav-sidebar yY_left">
+                <li><a href="talkCharts.html">话术统计图形分析</a></li>
+                <li><a href="recognitionRate.html">统计话术识别率</a></li>
+                <!--<li><a href="serviceRate.html">service占比统计图</a></li>-->
+                <!--<li><a href="rawTextTotal.html">话术总数分析统计</a></li>-->
+                <li class="left_nav_choose"><a class="left_nav_choose_ys" href="userStatistics.html">用户统计图</a></li>
+            </ul>
+        </div>
+        <div class="col-xs-9 main">
+            <div class="shadowcolor">
+                <div class="onleft">用户统计图</div>
+                <a id="backPage" class="dataBack" href="javascript:history.go(-1)">返回上一页</a>
+            </div>
+            <div class="form-group buttonsizefirst back">
+                <div class="statistical col-sm-offset-1">
+                    <!--累计用户总数-->
+                    <h4>累计用户总数：<span></span>人</h4>
+                    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+                    <div id="addPerson" style="width: 1000px;height:300px; margin: 0 auto;"></div>
+                    <div id="userActive" style="width: 1000px;height:300px; margin: 0 auto;"></div>
+                    <div class="monthBox">
+                        <div class="form-group serviceChartBox formQuery">
+                            <form class="form-horizontal">
+                                <label for="carTypeChart" class="inputName1 control-label">汽车类型：</label>
+                                <select name="carTypeChart" id="carTypeChart" class="originalSelect selectpicker blurType" title="请选择汽车类型..." data-live-search="true" data-dropup-auto="false" >
+                                </select>
+                            </form>
+                        </div>
+                        <div id="userMonth" style="width: 1000px;height:300px; margin: 0 auto;"></div>
+                    </div>
+                    <div class="monthBox">
+                        <div class="form-group serviceChartBox formQuery">
+                            <form class="form-horizontal">
+                                <div class="form-group serviceList formQuery">
+                                    <label for="rawTextService" class="inputName1 control-label">服务类型：</label>
+                                    <select name="rawTextService" id="rawTextService" class="originalSelect selectpicker blurType" title="请选择服务类型..." data-live-search="true"  >
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="rawTextServiceChart" style="width: 1000px;height:400px; margin:50px auto 0;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script src="js/echarts.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/userStatistics.js"></script>
+</body>
+</html>

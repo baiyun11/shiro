@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>仪表盘列表页面</title>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/bootstrap-theme.css">
+    <!-- 引入Bootstrap-table样式 -->
+    <link rel="stylesheet" href="../../utils/bootstrap-table/bootstrap-table.css">
+    <link rel="stylesheet" href="../../utils/bootstrap-table/bootstrap-editable.css">
+    <link rel="stylesheet" href="dashboardList.css">
+
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.js"></script>
+    <script src="../../js/response.js"></script>
+    <script src="../../js/getUrlParam.js"></script>
+    <script src="dashboardList.js"></script>
+    <!-- 引入Bootstrap-table js -->
+    <script src="../../utils/bootstrap-table/bootstrap-table.js"></script>
+    <script src="../../utils/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+    <script src="../../utils/bootstrap-table/bootstrap-table-editable.js"></script>
+    <script src="../../utils/bootstrap-table/bootstrap-editable.min.js"></script>
+</head>
+<body>
+    <div class="col-md-12 div-table">
+        <div class="div-table-tools">
+            <div class="page-total">
+                <div class="content">
+                    <div>仪表盘列表</div>
+                </div>
+            </div>
+        </div>
+        <div class="form">
+            <select class="form-select-name dropdown" id="select-dashboard-name"></select>
+            <button class="form-select-button select btn btn-primary" id="select-form-insearch">查询</button>
+            <button class="btn btn-primary addDashboard" data-toggle="modal"data-target="#myModal">添加仪表盘</button>
+        </div>
+        <div class="div-data-table">
+            <table id="table"></table>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="header">
+                    <h5 id="myModalLabel">仪表盘名称</h5>
+                    <input class="inputName" type="text" id="inputDash"/>
+                </div>
+                <div class="body">
+                    <h5 class="discribeTitle">描述</h5>
+                    <input class="inputDescribe" type="text"id="inputDescribe"/>
+                </div>
+                <div class="footer">
+                    <button type="button" class="new btn btn-primary" id="addDash">创建</button>
+                    <button type="button" class="cancel btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

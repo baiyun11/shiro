@@ -1,0 +1,154 @@
+/* 公共用部分--------------开始 */
+.layui_nav_header{
+    width: auto !important;
+	min-width: 1000px !important;
+	background:url(../images/top_bg.png) repeat-x !important;
+	height: 90px;
+	border-radius: 0 !important;
+	border:none !important;
+	box-shadow: 0px 2px 3px #cad3d7;
+}
+
+.layui-elem-quote{
+	font-size: 14px;
+	margin-top: 10px;
+	margin-left: 10px;
+	width: 95%;
+}
+
+.topLogo{
+	width: 265px;
+	height: 90px;
+	line-height: 90px;
+	text-align: center;
+	float: left;
+}
+
+.topNav{
+	float: left;
+	background: none;
+}
+
+.topNav li,.topNav li a{
+	height: 90px;
+	line-height: 90px;
+}
+
+
+.left_choose{
+margin-bottom: 2px;
+}
+
+.layui-nav-item a{
+	padding: 0 0 50px 50px;
+}
+
+.container li{
+    line-height: 52px !important;
+    color: #01110f !important;
+}
+.container li a{
+	color: #333 !important; 
+    font-size: 18px;
+}
+.logo_word{
+    padding:0px  !important;
+	width: 216px !important;
+	height: 46px !important;
+	line-height: 38px !important;
+	margin:0 !important;
+	color:#1c8774 !important;
+	font-size:22px;
+	font-family:"微软雅黑";
+	font-weight:bold;
+	text-decoration:none;
+}
+.left_nav{
+	padding:15px 0px !important;
+	width:265px;
+	height:100%;
+    position: fixed;
+    top: 90px;
+    left: 0;
+    background:#4fafdf url(../images/left_nav_bg.jpg) no-repeat top;
+}
+
+.left_nav ul{
+	background:none;
+}
+
+.layui-inline{
+    width:100%;
+}
+/*.left_nav .layui-nav-tree .layui-this,.left_nav .layui-nav-tree .layui-this:after{*/
+    /*background:url(../images/left_choose_bg.png) no-repeat !important ;*/
+	/*margin-bottom: 2px;*/
+	/*font-size: 16px ;	*/
+/*}*/
+
+.layui-nav-item a.left_nav_choose_ys,.layui-nav-item a.left_nav_choose_ys:hover{
+	color:#FFFFFF ;
+}
+
+
+/* .left_nav > ul > li > a:hover{ */
+	/* background:url(../images/left_choose_bg.png) no-repeat !important; */
+	/* background-color: #029b89 !important; */
+	/* background: none; */
+	/* color: #2bd694 !important;
+	font-size: 16px ;	 */
+/* } */
+
+/* .layui-this > a{ */
+	/* background:url(../images/left_choose_bg.png) no-repeat !important; */
+	/* color: #2bd694 !important;
+	font-size: 16px ;	 */
+/* } */
+
+/* .left_nav > ul > li > a:link{
+	background-color: #2bd694;
+	color: #fff;
+} */
+
+/* .layui-nav-tree  a{
+	padding: 0 0 0 50px !important;
+	font-size: 16px !important;
+}
+.layui-nav-tree  a:hover {
+	background: none !important;
+}
+ .layui-nav-tree > a:hover {
+	background: none !important;
+} */
+
+.dropdown{
+	padding-left: 10%;
+}
+
+/* 公共用部分--------------结束 */
+
+.main-container{
+	width: 84%;
+	height: 100%;
+	position: fixed;
+	left: 265px;
+}
+
+.tuichu{
+	margin-right: 1%;
+	margin-top: 1.5%;
+	display: inline-block;
+	height: 38px;
+	line-height: 38px;
+	padding: 0px 1px;
+	background-color: #009688;
+	color: #FFF;
+	white-space: nowrap;
+	text-align: center;
+	font-size: 16px;
+	border: medium none;
+	border-radius: 4px;
+	cursor: pointer;
+	width:4%;
+	float: right;
+}

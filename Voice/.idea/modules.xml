@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Voice.iml" filepath="$PROJECT_DIR$/.idea/Voice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/voice-aggregator/voice-aggregator.iml" filepath="$PROJECT_DIR$/voice-aggregator/voice-aggregator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/voice-dao/voice-dao.iml" filepath="$PROJECT_DIR$/voice-dao/voice-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/voice-parent/voice-parent.iml" filepath="$PROJECT_DIR$/voice-parent/voice-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/voice-pojo/voice-pojo.iml" filepath="$PROJECT_DIR$/voice-pojo/voice-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/voice-service/voice-service.iml" filepath="$PROJECT_DIR$/voice-service/voice-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/voice-web/voice-web.iml" filepath="$PROJECT_DIR$/voice-web/voice-web.iml" />
+    </modules>
+  </component>
+</project>

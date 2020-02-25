@@ -1,0 +1,186 @@
+.row{
+    width: 98vw;
+    margin-left: 0.7vw;
+    border: 0px solid red;
+    padding-left: 2.45vw;
+}
+.head{
+    display: flex;
+    margin-left: 0.7vw;
+    padding-left: 2.45vw;
+    width:98vw;
+    height:180px;
+}
+.col-md-1{
+    width: 5vw;
+    height:5vh;
+    margin-right: 0.5vw;
+    margin-bottom: 1vh;
+    border:1px solid #cecece;
+    padding-left: 0px;
+}
+
+.resize-div{
+    position: absolute;
+    z-index: 1;
+    width:300px;
+    height:170px;
+    background-color: #FFFFFF;
+    border: 1px solid #d7dbde;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, .08);
+    border-radius: 4px;
+}
+
+.div-card-title{
+    font-weight: bold;
+    font-size: 85%;
+    margin-left: 2%;
+    margin-top: 2%;
+    border: 0px solid red;
+    width: 70%;
+    height: 12%;
+    float: left;
+    whitespace:nowrap;
+    overflow: hidden;
+    padding-top: 1%;
+}
+
+.div-card-delete{
+    border: 0px solid red;
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin-right: 2%;
+    margin-top: 2%;
+}
+
+.div-card-content{
+    border: 0px solid red;
+    float: left;
+    margin-left: 2%;
+    margin-top: 1.5%;
+    width: 96%;
+    height: 65%;
+}
+
+.div-card-zoom{
+    border: 0px solid red;
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin-right: 2%;
+    margin-top: 1.5%;
+}
+
+.div-card-x-title{
+    color: #74838f;
+    font-weight: bold;
+    font-size: 85%;
+    border: 0px solid red;
+    float: left;
+    margin-left: 20%;
+    margin-top: 1.5%;
+    width: 60%;
+    height: 12%;
+    padding-top: 1%;
+    padding-left: 15%;
+}
+
+.glyphicon{
+    color: #c7cfd4;
+    top: 3px;
+    left: 2px;
+}
+
+.glyphicon:hover{
+    color: #61696e;
+    top: 3px;
+    left: 2px;
+}
+.describe{
+    width:22.5vw;
+    height:25vh;
+}
+.resize{
+    margin-left: 0.7vw;
+    padding-left: 2.45vw;
+    width:22.5vw;
+    height:25vh;
+}
+.footer{
+    margin-left: 0.7vw;
+    padding-left: 2.45vw;
+    width:98vw;
+    height:25vh;
+}
+.titleText{
+    width: 303px;
+    margin-top: -5px;
+    height: 132px;
+}
+.threeButton{
+    width: 450px;
+    height:50px;
+    margin-top: 10px;
+    margin-left: 190px;
+}
+.add_Button1{
+    width: 120px;
+    height: 35px;
+    margin-left: 35px;
+    background-color: #3289dd;
+    color: white;
+}
+.add_Button2{
+    width: 120px;
+    height: 35px;
+    margin-left: 20px;
+    background-color: #4c97dd;
+    color: white;
+}
+
+.add_Button3{
+    width: 120px;
+    height: 35px;
+    margin-left: 20px;
+    background-color: #6b9cdd;
+    color: white;
+}
+.cancel{
+    margin-left: 300px;
+    margin-top: 3px;
+    width: 80px;
+    height: 30px;
+    padding-top:4px;
+}
+.header {
+    display: flex;
+    height: 50px;
+    margin-left: 30px;
+}
+.modal-content{
+    width:600px;
+    height:400px;
+    padding: 30px 0px 20px 10px;
+}
+.cardNameTable{
+    height: 335px;
+    margin-left: 30px;
+}
+.cardNameBtn{
+    width: 92%;
+    height: 35px;
+    border:0 solid white;
+    background-color: inherit;
+    margin-top: 2px;
+}
+
+.dashShowCard{
+    z-index: 999;
+    display: block;
+    position: absolute;
+    background-color: #FFFFFF;
+    border: 1px solid red;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, .08);
+    border-radius: 4px;
+}

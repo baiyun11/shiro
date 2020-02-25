@@ -1,0 +1,24 @@
+.page-total{
+    width: 98%;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: #1abc9c;
+}
+
+.page-total-content{
+    width: 99.7%;
+    height: 50px;
+    margin-left: 5px;
+    padding-top: 14px;
+    padding-left: 20px;
+    font-size: 15px;
+    color: #6f6f6f;
+    background-color: #ecf0f1;
+
+}
+
+.page-form{
+    margin-top: 20px;
+}
+

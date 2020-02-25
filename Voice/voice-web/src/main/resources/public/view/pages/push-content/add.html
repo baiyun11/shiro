@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>添加推送内容</title>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../../utils/region/css/style.css">
+    <link rel="stylesheet" href="add.css">
+
+    <script src="../../js/plupload-2.1.2/js/plupload.full.min.js"></script>
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.js"></script>
+    <script src="../../js/response.js"></script>
+    <script src="../../js/getUrlParam.js"></script>
+    <script src="../../utils/region/js/City_data.js"></script>
+    <script src="../../utils/region/js/areadata.js"></script>
+    <script src="../../utils/region/js/auto_area.js"></script>
+    <script src="add.js"></script>
+</head>
+<body>
+
+    <div class="page-total">
+        <div class="page-total-content">添加推送内容</div>
+    </div>
+
+    <div class="div-add-content">
+
+        <div class="div-title">消息推送</div>
+        <hr class="hr-line">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="input-push-type" class="col-sm-2 control-label">推荐类型：</label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="input-push-type" disabled="disabled">
+                </div>
+            </div>
+        </form>
+        <!-- 节目类型表单 -->
+        <form class="form-horizontal" id="form-jx" hidden="true">
+            <div class="form-group" id="div-textarea-explain">
+                <label for="textarea-explain" class="col-sm-2 control-label label-explain">播报内容：</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" rows="5" id="textarea-explain"></textarea>
+                </div>
+            </div>
+            <div class="form-group" id="div-radio-theme-type">
+                <label for="textarea-explain" class="col-sm-2 control-label">主题类别：</label>
+                <div class="col-sm-10">
+                    <label class="radio-inline">
+                        <input type="radio" name="radio-theme-type" id="radio-kldt" value="考拉FM电台"> 考拉FM电台
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="radio-theme-type" id="radio-image" value="picture"> 图片
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="radio-theme-type" id="radio-music" value="audio"> 音频
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="radio-theme-type" id="radio-video" value="video"> 视频
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="radio-theme-type" id="radio-text" value="words"> 文字
+                    </label>
+                </div>
+            </div>
+            <div class="form-group" id="div-input-theme">
+                <label for="input-theme" class="col-sm-2 control-label">主题：</label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="input-theme">
+                    <button class="btn btn-info button-theme" type="button" id="button-theme">选择文件</button>
+                    <div id="div-file-name" class="topicFileName"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="input-command" class="col-sm-2 control-label">执行内容：</label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="input-command" required="required">
+                </div>
+            </div>
+            <div class="form-group change_group" id="div-urlAppName" hidden="true">
+                <label for="input-urlAppName" class="col-sm-2 control-label inputName1">URL解析应用名：</label>
+                <div class="col-sm-10 inputText1">
+                    <input type="text" name="executiveContent" class="form-control" id="input-urlAppName">
+                </div>
+            </div>
+            <div class="form-group change_group" id="div-urlPackageName" hidden="true">
+                <label for="input-urlPackageName" class="col-sm-2 control-label inputName1">URL解析包名：</label>
+                <div class="col-sm-10 inputText1">
+                    <input type="text" name="executiveContent" class="form-control" id="input-urlPackageName">
+                </div>
+            </div>
+        </form>
+        <!-- APP类型表单 -->
+        <form class="form-horizontal" id="form-app" hidden="true">
+            <div class="form-group" id="div-input-app-name">
+                <label for="input-app-name" class="col-sm-2 control-label inputName1">App名称：</label>
+                <div class="col-sm-10 inputText1">
+                    <input type="text" name="AppName" class="form-control" id="input-app-name" placeholder="请输入App名称...">
+                </div>
+            </div>
+            <div class="form-group" id="div-input-app-package">
+                <label for="input-app-package" class="col-sm-2 control-label inputName1">App包名：</label>
+                <div class="col-sm-10 inputText1">
+                    <input type="text" name="appPackage" class="form-control" id="input-app-package" placeholder="请输入App包名...">
+                </div>
+            </div>
+            <div class="form-group" id="div-textarea-app-introduce">
+                <label for="textarea-app-introduce" class="col-sm-2 control-label inputName1">App介绍说明：</label>
+                <div class="col-sm-10 inputText1">
+                    <textarea class="form-control" name="AppIntroduce" id="textarea-app-introduce" rows="3" placeholder="请输入App介绍说明..."></textarea>
+                </div>
+            </div>
+        </form>
+        <!-- 资讯类型表单 -->
+        <form class="form-horizontal" id="form-zx" hidden="true">
+            <div class="form-group change_group" id="div-topicInformation">
+                <label for="topicInformation" class="col-sm-2 control-label inputName1">资讯主题：</label>
+                <div class="col-sm-10 inputText1">
+                    <input type="text" name="AppName" class="form-control" id="topicInformation" placeholder="请输入资讯主题...">
+                </div>
+            </div>
+            <div class="form-group change_group" id="div-detailsInformation">
+                <label for="detailsInformation" class="col-sm-2 control-label inputName1">资讯详情：</label>
+                <div class="col-sm-10 inputText1">
+                    <textarea class="form-control" name="detailsInformation" id="detailsInformation" rows="3" placeholder="请输入资讯详情..."></textarea>
+                </div>
+            </div>
+        </form>
+        <div class="col-sm-offset-3">
+            <button id="save" class="btn btn-default">Sign in</button>
+            <button type="submit" id="reset" href="add.html" class="btn btn-default">reset</button>
+            <button type="submit" id="reback" class="btn btn-default">返回上一页</button>
+        </div>
+    </div>
+    <script type="text/html" id="push-region">
+        <br>
+        <div class="div-title">目标选择</div>
+        <hr class="hr-line">
+        <div class="form-group change_group" id="div-target-userl">
+            <label class="col-sm-2 control-label inputName1">目标用户：</label>
+            <div class="col-sm-10 inputText1">
+                <label class="radio-inline">
+                    <input type="radio" name="radio-target-userl" id="radio-all-userl" value="all"> 全部用户
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="radio-target-userl" id="radio-region-userl" value="region"> 区域用户
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="radio-target-userl" id="radio-designation-userl" value="vin"> 特定用户
+                </label>
+            </div>
+        </div>
+        <div class="form-group change_group" id="div-region" hidden="true">
+            <label class="col-sm-2 control-label inputName1">省市地区：</label>
+            <div class="col-sm-10 inputText1">
+                <button type="button" class="btn-qxz area-duoxuan" data-cityName="" data-value="">请选择</button>
+                <div class="div-data-result div-region-result"></div>
+            </div>
+        </div>
+        <div class="form-group change_group" id="div-specific" hidden="true">
+            <label class="col-sm-2 control-label inputName1">特定用户：</label>
+            <div class="col-sm-10 inputText1">
+                <label class="radio-inline">
+                    <input type="radio" name="radio-target-specific" id="radio-specific-file" value="fileChange"> 选择文件
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="radio-target-specific" id="radio-specific-input" value="inputVIN"> 输入VIN码
+                </label>
+            </div>
+        </div>
+        <div class="form-group change_group" id="div-specific-file" hidden="true">
+            <label class="col-sm-2 control-label inputName1"></label>
+            <label class="radio-inline">
+                <input type="file"  id="specific-file" value="fileChange" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel">
+            </label>
+        </div>
+        <div class="form-group change_group" id="div-specific-input" hidden="true">
+            <label class="col-sm-2 control-label inputName1">输入VIN码：</label>
+            <div class="col-sm-10 inputText1">
+                <textarea  class="form-control" rows="3" placeholder="请输入17位的VIN码" id="specific-input"></textarea>
+                <code class="specific-input-care">请在输入17位VIN码后，按 “ 回车 ” 键换行输入下一组VIN码</code>
+            </div>
+
+        </div>
+    </script>
+
+    <script type="text/html" id="push-common">
+        <br>
+        <div class="div-title">推送设置</div>
+        <hr class="hr-line">
+        <div class="form-group change_group" id="div-push-time-type">
+            <label class="col-sm-2 control-label inputName1">推送时间类型：</label>
+            <div class="col-sm-10 inputText1">
+                <label class="radio-inline">
+                    <input type="radio" name="radio-push-time" id="radio-realTime" value="1"> 实时
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="radio-push-time" id="radio-onTime" value="2"> 按时
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="radio-push-time" id="radio-timing" value="3"> 定时
+                </label>
+                <label class="radio-inline">
+                    <code>“实时”类型只能在节目类型或资讯类型中配置一次。</code>
+                </label>
+            </div>
+        </div>
+        <div class="form-group change_group" id="div-push-time" hidden="true">
+            <label for="input-push-time" class="col-sm-2 control-label inputName1">推送时间(分钟): </label>
+            <div class="col-sm-10 inputText1">
+                <input type="text" name="executiveContent" class="form-control" id="input-push-time">
+            </div>
+        </div>
+        <div class="form-group change_group">
+            <label for="input-push-frequency" class="col-sm-2 control-label inputName1">推送频率(次)：</label>
+            <div class="col-sm-10 inputText1">
+                <input type="text" name="executiveContent" class="form-control" id="input-push-frequency" placeholder="请输入推送频率...">
+            </div>
+        </div>
+        <div class="form-group change_group">
+            <label class="col-sm-2 control-label inputName1">消息有效期：</label>
+            <div class="col-sm-10 inputText1 validityChange">
+                <label class="radio-inline labelRadio">
+                    <input type="radio" name="messageValidity" checked="checked"  value="0"> 永久有效
+                </label>
+                <label for="validityDay" class="radio-inline labelRadio" id="div-validityDay">
+                    <input type="radio" name="messageValidity" value="5"> 有效天数(天)：<input id="validityDay" class="effectiveInput" disabled="disabled" type="text">
+                </label>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/html" id="push-version-common">
+        <div class="form-group change_group">
+            <label for="input-push-version" class="col-sm-2 control-label inputName1">版本号：</label>
+            <div class="col-sm-10 inputText1">
+                <input type="text" name="specifiedVersion" class="form-control" id="input-push-version" disabled="disabled" placeholder="请输入版本号...">
+            </div>
+        </div>
+        <div class="alert alert-warning alert-dismissible fade in addAlert" role="alert" hidden="true"></div>
+        <div class="progress" id="div-progress" hidden="true">
+            <div class="progress-bar progress-bar-striped active" id="div-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+            </div>
+        </div>
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>数据统计分析-Nlp管理</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+</head>
+<body>
+<div class="headerTop"></div>
+<div class="container">
+    <div class="row content">
+        <div class="col-xs-3 sidebar left_nav" name="topNavBasis_0">
+            <ul class="nav nav-sidebar yY_left">
+                <li class="left_nav_choose">
+                    <a class="left_nav_choose_ys" href="javascript:;" id="collapseListGroupHeading2" data-toggle="collapse" data-target="#collapseListGroup2" role="tab">话术分析</a>
+                    <ul class="twoMenu collapse in" id="collapseListGroup2" role="tabpanel" aria-labelledby="collapseListGroupHeading2">
+                        <li><a href="dataAnalysis.html">原始话术分析</a></li>
+                        <li><a href="erroneousExecution.html">错误话术分析</a></li>
+                        <li><a href="toBeConfirm.html">待确认话术分析 </a></li>
+                        <li class="twoMenuBG"><a class="menuColor" href="nlp.html">Nlp管理</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="positionAnalysis.html">位置数据分析</a>
+                </li>
+                <li>
+                    <a href="wakeUp.html">唤醒类</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-9 main">
+            <div class="conditions">
+                <form class="form-horizontal">
+                    <div class="form-group serviceList formQuery statusForm">
+                        <label for="statusData" class="inputName1 control-label">状态：</label>
+                        <select name="textType" id="statusData" class="originalSelect selectpicker blurType" title="请选择状态..." >
+                            <option value="">全部状态</option>
+                            <option value="solved">待解决</option>
+                            <option value="closed">已关闭</option>
+                            <option value="resolved">已解决</option>
+                            <option value="acceptance">已验收</option>
+                        </select>
+                    </div>
+                    <div class="form-group serviceList formQuery">
+                        <label for="errorCodeData" class="inputName1 control-label">错误码：</label>
+                        <select name="textType" id="errorCodeData" class="originalSelect selectpicker blurType" title="请选择错误码..." data-live-search="true" >
+                        </select>
+                    </div>
+                    <div class="solvedBtn">
+                        <input type="text" placeholder="请选择要上传的文件..." />
+                        <input type="file" onchange="showText()" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+                        <button type="button" class="btn" id="importData">导入</button>
+                        <button type="button" class="btn" id="exportData">导出</button>
+                        <span class="warnWord"></span>
+                    </div>
+                </form>
+                <a id="backPage" href="javascript:history.go(-1)">返回上一页</a>
+            </div>
+            <div class="table-responsive main_table">
+                <table class="table table-striped">
+                    <thead>
+                        <tr class="table_title">
+                            <th><div class="oderNum">sort</div></th>
+                            <th><div class="rawTextDA">rawText</div></th>
+                            <th><div class="serviceDA">errorCode</div></th>
+                            <th><div class="serviceDA">corrrectFiled</div></th>
+                            <th><div class="serviceDA">errorFiled</div></th>
+                            <th><div class="statusTBS">status</div></th>
+                            <!--<th><div class="AutoVINDA">user</div></th>-->
+                            <!--<th><div class="date_time">time</div></th>-->
+                            <th><div class="operation">operation</div></th>
+                        </tr>
+                    </thead>
+                    <tbody id="allStatus">
+                    </tbody>
+                </table>
+            </div>
+            <nav aria-label="Page navigation"  class="page_navigation">
+                <ul class="pagination" id="page">
+                </ul>
+                <span id="skip">
+							跳转到第
+							<input id="skipPage" type="text" value="" />
+							页
+							<button id="skipBtn" type="button">确定</button>
+						</span>
+                <span id="num_pages"></span>
+                <span id="num_lists"></span>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="lookModalLabel" id="lookAll">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Nlp管理</h4>
+            </div>
+            <div class="modal-body">
+                <div class="lt_uploadHeader">
+                    <table class="table table-striped">
+                        <tbody id="nlpWord">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关 闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script src="js/bootstrap-paginator.js"></script>
+<script src="js/common.js"></script>
+<script src="js/nlp.js"></script>
+</body>
+</html>

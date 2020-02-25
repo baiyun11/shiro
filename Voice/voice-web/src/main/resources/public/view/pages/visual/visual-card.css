@@ -1,0 +1,44 @@
+.visualCreate{
+    width:96%;
+    margin:10px 2% 0;
+    border:1px solid #ddd;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 8px -5px #0f0f0f;
+}
+
+.visualCreate form {
+    margin: 0 2.5%;
+}
+
+.visualCreate h1{
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    margin: 0 0 10px 0;
+    height:50px;
+    line-height: 50px;
+    text-indent: 15px;
+}
+
+.visualCreate textarea{
+    resize:vertical;
+}
+
+.visualCreateBtn{
+    width:80px;
+    margin: 0 auto 25px;
+}
+
+.visualCreateBtn button{
+    width:90px;
+    background: #509ee3;
+    border:none;
+    -webkit-border-radius: 99px;
+    -moz-border-radius: 99px;
+    border-radius: 99px;
+    height:32px;
+    color: #fff;
+}
+

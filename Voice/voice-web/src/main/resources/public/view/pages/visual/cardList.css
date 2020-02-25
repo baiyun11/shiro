@@ -1,0 +1,68 @@
+body{
+    border: 0px solid red;
+    width: 98.5%;
+    height: auto;
+}
+.div-table{
+    width: 98.5%;
+    height: auto;
+    margin-left: 1%;
+    /*margin-right: 1%;*/
+    padding-left: 0px;
+    padding-right: 0px;
+    border: 0px solid red;
+}
+
+.div-table-tools{
+    width: 100%;
+    height: 45px;
+    border: 0px solid red;
+}
+
+.div-data-table{
+    width: 100%;
+    height: 500px;
+    border: 0px solid red;
+    padding-top: 50px;
+}
+.page-total{
+    width: 99.7%;
+    height: 50px;
+    margin-top: 10px;
+    /*margin-left: 10px;*/
+    background-color: #1abc9c;
+}
+.content{
+    width: 99.7%;
+    height: 50px;
+    margin-left: 5px;
+    padding-top: 14px;
+    padding-left: 20px;
+    font-size: 15px;
+    color: #6f6f6f;
+    background-color: #ecf0f1;
+}
+.form{
+    width: 100%;
+    margin-top: 25px;
+}
+.addCardList{
+    width: 150px;
+    height: 30px;
+    color: white;
+    background-color: #077ace;
+    float:right;
+    margin-right: 3px;
+    padding-top: 5px;
+}
+/*.updateCard{*/
+    /*border-color: white;*/
+/*}*/
+.deleteCard span{
+    font-weight: normal;
+    font-size: 14px;
+}
+.updateCard span{
+    font-weight: normal;
+    font-size: 14px;
+}

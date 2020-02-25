@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>配置管理-话术统计图形分析</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/data.css">
+</head>
+<body>
+<div class="headerTop"></div>
+<div class="container">
+    <div class="row content">
+        <div class="col-xs-3 sidebar left_nav" name="topNavBasis_4">
+            <ul class="nav nav-sidebar yY_left">
+                <li class="left_nav_choose"><a class="left_nav_choose_ys" href="talkCharts.html">话术统计图形分析</a></li>
+                <li><a href="recognitionRate.html">统计话术识别率</a></li>
+                <!--<li><a href="serviceRate.html">service占比统计图</a></li>-->
+                <!--<li><a href="rawTextTotal.html">话术总数分析统计</a></li>-->
+                <li><a href="userStatistics.html">用户统计图</a></li>
+            </ul>
+        </div>
+        <div class="col-xs-9 main">
+            <div class="shadowcolor">
+                <div class="onleft">话术统计图形分析</div>
+                <a id="backPage" class="dataBack" href="javascript:history.go(-1)">返回上一页</a>
+            </div>
+            <div class="form-group buttonsizefirst back">
+                <div class="dataView">
+                    <button type="button" class="btn" name="dataBtn" disabled="disabled">周数据分析</button>
+                    <button type="button" class="btn" name="dataBtn">24小时数据分析</button>
+                    <button type="button" class="btn serviceBtnView" name="dataBtn">service占比分析</button>
+                </div>
+                <form class="form-horizontal chooseDate">
+                    <div class="form-group date form_datetime formQuery" data-date-format="yyyy-mm-dd hh:ii:ss p" data-link-field="dtp_input1">
+                        <label class="inputName1 control-label">查询时间段：</label>
+                        <input type="text" id="conditiontimeStart" readonly class="form-control originalTime" placeholder="起始时间">
+                        <span class="lineTime">-</span>
+                        <input type="text" id="conditiontimeEnd" readonly class="form-control originalTime" placeholder="截止时间">
+                    </div>
+                    <p>
+                        <button id="queryRate" type="button" class="btn btn-info">查&nbsp;&nbsp;询</button>
+                    </p>
+
+                </form>
+                <div class="statistical col-sm-offset-1">
+                    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+                    <div id="main" style="width: 1000px;height:700px; margin: 0 auto;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap-datetimepicker.min.js"></script>
+<script src="js/echarts.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/talkCharts.js"></script>
+</body>
+</html>

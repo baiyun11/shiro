@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>配置管理-车型配置管理</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+</head>
+<body>
+<div class="headerTop"></div>
+<div class="container">
+    <div class="row content">
+        <div class="col-xs-3 sidebar left_nav" name="topNavBasis_1">
+            <ul class="nav nav-sidebar yY_left">
+                <li><a href="index.html">词库版本管理</a></li>
+                <li><a href="service_type.html">服务模块管理</a></li>
+                <li class="left_nav_choose"><a class="left_nav_choose_ys" href="functionalAdaptation.html">车型模块管理</a></li>
+                <li><a href="data.html">全局配置管理</a></li>
+            </ul>
+        </div>
+        <div class="col-xs-9 main">
+            <div class="searchData">
+                <button type="button" id="addConfig" class="btn add_btn" data-toggle="modal" data-target="#identifier1">添加模块配置</button>
+                <!--<form class="form-search">-->
+                    <!--<input type="text" class="input-medium search-query" id="searchFunc" placeholder="请输入要查询的模块配置...">-->
+                    <!--<button type="button" class="btn" id="searchFuncBtn">查询</button>-->
+                <!--</form>-->
+                <a id="backPage" href="javascript:history.go(-1)">返回上一页</a>
+            </div>
+            <div class="table-responsive main_table">
+                <table class="table table-striped">
+                    <thead>
+                    <tr class="table_title">
+                        <th><div class="deploy">模块配置</div></th>
+                        <th><div class="deployCode">模块配置码</div></th>
+                        <th><div class="funcType">功能类型</div></th>
+                        <th><div class="username">操作人</div></th>
+                        <th><div class="date_time">操作时间</div></th>
+                        <th class="operationBox"><div class="operation">操作</div></th>
+                    </tr>
+                    </thead>
+                    <tbody id="deployList">
+                    </tbody>
+                </table>
+            </div>
+            <!--<nav aria-label="Page navigation" class="page_navigation">-->
+                <!--<ul class="pagination" id="page">-->
+
+                <!--</ul>-->
+                <!--<span id="skip">-->
+                    <!--跳转到第-->
+                    <!--<input id="skipPage" type="text" value="" />-->
+                    <!--页-->
+                    <!--<button id="skipBtn" type="button">确定</button>-->
+                <!--</span>-->
+                <!--<span id="num_pages"></span>-->
+                <!--<span id="num_lists"></span>-->
+            <!--</nav>-->
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="addTypeModalLabel" id="identifier1" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">添加模块配置</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="addwords">
+                    <div class="form-group change_group">
+                        <label for="configFunc" class="col-sm-2 control-label inputName1">模块配置：</label>
+                        <div class="col-sm-10 inputText1">
+                            <input name="configFunc" id="configFunc" class="form-control" title="请输入模块配置..." />
+                        </div>
+                    </div>
+                    <div class="form-group change_group">
+                        <label for="configCode" class="col-sm-2 control-label inputName1">模块配置码：</label>
+                        <div class="col-sm-10 inputText1">
+                            <input name="configCode" id="configCode" class="form-control" title="请输入模块配置码..." />
+                        </div>
+                    </div>
+                </form>
+                <div class="alert alert-warning alert-dismissible fade in" role="alert"></div>
+            </div>
+            <div class="modal-footer">
+                <div class="form-group change_group add_Button">
+                    <button type="button" id="addDeployBtn" class="btn btnAdd">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="alertSuccess">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script src="js/bootstrap-paginator.js"></script>
+<script src="js/getUrlParam.js"></script>
+<script src="js/funcDeploy.js"></script>
+<script src="js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+[
+	{
+		"title" : " 用户管理",
+		"topping": true,
+		"name" : "users",
+		"icon" : "icon-yonghu1",
+		"src" : "../../shiro/view/pages/user/userList.html",
+		"topNavId": 4,
+		"level": 2
+	},
+	{
+		"title" : " 角色管理",
+		"topping": false,
+		"name" : "roles",
+		"icon" : "icon-yonghu1",
+		"src" : "../../shiro/view/pages/user/roleList.html",
+		"topNavId": 4,
+		"level": 2
+	},
+	{
+		"title" : " 词库版本管理",
+		"topping": false,
+		"name" : "application",
+		"icon" : "icon-yonghu1",
+		"src" : "pages/data/appSearch.html",
+		"topNavId": 2,
+		"level": 2
+	},
+	{
+		"title" : " 服务模块管理",
+		"topping": false,
+		"name" : "application",
+		"icon" : "icon-yonghu1",
+		"src" : "pages/data/appSearch.html",
+		"topNavId": 2,
+		"level": 2
+	},
+	{
+		"title" : " 车型模块管理",
+		"topping": false,
+		"name" : "application",
+		"icon" : "icon-yonghu1",
+		"src" : "pages/data/appSearch.html",
+		"topNavId": 2,
+		"level": 2
+	},
+	{
+		"title" : " APP全局总接口管理",
+		"topping": true,
+		"name" : "application",
+		"icon" : "icon-yonghu1",
+		"src" : "../pages/global-configuration/index.html",
+		"topNavId": 2,
+		"level": 2
+	},
+	{
+		"title" : " NLP分数配置管理",
+		"topping": false,
+		"name" : "application",
+		"icon" : "icon-yonghu1",
+		"src" : "../pages/score-allocation/score.html",
+		"topNavId": 2,
+		"level": 2
+	},
+	{
+		"title" : " 推送版本管理",
+		"topping": false,
+		"name" : "pushVersion",
+		"icon" : "icon-yonghu1",
+		"src" : "../pages/push-version/index.html",
+		"topNavId": 3,
+		"level": 2
+	},
+	{
+		"title" : " 精选推送管理",
+		"topping": true,
+		"name" : "pushVersion",
+		"icon" : "icon-yonghu1",
+		"src" : "../pages/precise-push/index.html",
+		"topNavId": 3,
+		"level": 2
+	},
+	{
+		"title" : " 仪表盘",
+		"topping": false,
+		"name" : "visual",
+		"icon" : "icon-yonghu1",
+		"src" : "../pages/visual/visual-card.html",
+		"topNavId": 6,
+		"level": 2
+	},
+	{
+		"title" : " 仪表盘列表",
+		"topping": true,
+		"name" : "visual",
+		"icon" : "icon-yonghu1",
+		"src" : "../pages/visual/dashboardList.html",
+		"topNavId": 6,
+		"level": 2
+	},
+	{
+		"title" : " 卡片列表",
+		"topping": false,
+		"name" : "visual",
+		"icon" : "icon-yonghu1",
+		"src" : "../pages/visual/cardList.html",
+		"topNavId": 6,
+		"level": 2
+	}
+
+]

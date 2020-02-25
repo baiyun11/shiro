@@ -1,0 +1,20 @@
+.addUser{
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 0px;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 7%;
+}
+
+.userLog{
+    margin-left: 10px;
+}
+
+

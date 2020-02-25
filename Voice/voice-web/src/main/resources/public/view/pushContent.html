@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>推送内容管理</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+</head>
+<body>
+<div class="headerTop"></div>
+
+<div class="container">
+    <div class="row content">
+        <div class="col-xs-3 sidebar left_nav" name="topNavBasis_2">
+            <ul class="nav nav-sidebar yY_left">
+                <li class="left_nav_choose">
+                    <a class="left_nav_choose_ys" href="pushManagement.html" >推送内容管理</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-9 main">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs mainTabs" role="tablist" id="myTabs">
+                <li role="presentation" class="active" id="program" onclick="programPush()"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">节目类型</a></li>
+                <li role="presentation" id="app" onclick="appPush()"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">APP类型</a></li>
+                <li role="presentation" id="message" onclick="messagePush()"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">资讯类型</a></li>
+            </ul>
+            <p class="main-top">
+                <button type="button" class="btn add_btn" id="addPushContent" data-toggle="modal" data-target=".bs-example-modal-lg">新增推送内容</button>
+                <a id="backPage" href="javascript:history.go(-1)">返回上一页</a>
+            </p>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <div class="table-responsive main_table">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr class="table_title">
+                                <th><div class="pushNumber">序号</div></th>
+                                <th><div class="category">主题类别</div></th>
+                                <th><div class="instructions">播报内容</div></th>
+                                <th><div class="theme">主题</div></th>
+                                <th><div class="type">推送类型</div></th>
+                                <th><div class="contentExecuted">执行的内容</div></th>
+                                <th><div class="pushTime">推送时间</div></th>
+                                <th><div class="pushFrequency">推送频率</div></th>
+                                <th><div class="messageValidity">消息有效期</div></th>
+                                <th><div class="versionNumber">版本号</div></th>
+                                <th><div class="date_time">时间</div></th>
+                                <th><div class="operation">操作</div></th>
+                            </tr>
+                            </thead>
+                            <tbody id="show">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="profile">
+
+                    <div class="table-responsive main_table">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr class="table_title">
+                                <th><div class="pushNumber">序号</div></th>
+                                <th><div class="type">推送类型</div></th>
+                                <th><div class="appName">app名称</div></th>
+                                <th><div class="appPackage">app包名</div></th>
+                                <th><div class="introduction">app介绍说明</div></th>
+                                <th><div class="versionNumber">版本号</div></th>
+                                <th><div class="date_time">时间</div></th>
+                                <th><div class="operation">操作</div></th>
+                            </tr>
+                            </thead>
+                            <tbody id="application">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="messages">
+                    <div class="table-responsive main_table">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr class="table_title">
+                                <th><div class="pushNumber">序号</div></th>
+                                <th><div class="type">推送类型</div></th>
+                                <th><div class="theme">资讯主题</div></th>
+                                <th><div class="particulars">资讯详情</div></th>
+                                <th><div class="pushTime">推送时间</div></th>
+                                <th><div class="pushFrequency">推送频率</div></th>
+                                <th><div class="messageValidity">消息有效期</div></th>
+                                <th><div class="versionNumber">版本号</div></th>
+                                <th><div class="date_time">时间</div></th>
+                                <th><div class="operation">操作</div></th>
+                            </tr>
+                            </thead>
+                            <tbody id="information">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <nav aria-label="Page navigation"  class="page_navigation">
+                <ul class="pagination" id="page">
+
+                </ul>
+                <span id="skip">
+                    跳转到第
+                    <input id="skipPage" type="text" value="" />
+                    页
+                    <button id="skipBtn" type="button">确定</button>
+                </span>
+                <span id="num_pages"></span>
+                <span id="num_lists"></span>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="addTypeModalLabel" id="identifier1" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" id="container">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="addContent"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">新增推荐内容</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="addPush">
+                    <div class="form-group change_group">
+                        <label for="pushType" class="col-sm-2 control-label inputName1">推荐类型：</label>
+                        <div class="col-sm-10 inputText1">
+                            <input type="text" name="pushType" class="form-control" id="pushType" disabled="disabled" placeholder="请输入推荐类型...">
+                        </div>
+                    </div>
+                    <!--节目类型需要输入的数据 开始-->
+                    <div class="typeProgram">
+                        <div class="form-group change_group">
+                            <label for="recommendation" class="col-sm-2 control-label inputName1">播报内容：</label>
+                            <div class="col-sm-10 inputText1">
+                                <textarea class="form-control" name="recommendation" id="recommendation" rows="3" placeholder="请输入说明..."></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group change_group">
+                            <label class="col-sm-2 control-label inputName1">主题类别：</label>
+                            <div class="col-sm-10 inputText1 categoryRadio">
+                                <label class="radio-inline labelRadio">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="考拉FM电台"> 考拉电台
+                                </label>
+                                <label class="radio-inline labelRadio">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="picture"> 图片
+                                </label>
+                                <label class="radio-inline labelRadio">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="audio"> 音频
+                                </label>
+                                <label class="radio-inline labelRadio">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="video"> 视频
+                                </label>
+                                <label class="radio-inline labelRadio">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio5" value="words"> 文字
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group change_group">
+                            <label for="topic" class="col-sm-2 control-label inputName1">主题：</label>
+                            <div class="col-sm-10 inputText1">
+                                <input type="text" name="topic" class="form-control topicText" id="topic" placeholder="请输入主题...">
+                                <!--<input type="file" id="exampleInputFile" class="topicFile">-->
+                                <button id="exampleInputFile" class="topicFile">选择文件</button>
+                                <div id="exampleInputFileName" class="topicFileName"></div>
+                            </div>
+                        </div>
+                        <div class="form-group change_group">
+                            <label for="executiveContent" class="col-sm-2 control-label inputName1">执行的内容：</label>
+                            <div class="col-sm-10 inputText1">
+                                <input type="text" name="executiveContent" class="form-control" id="executiveContent">
+                            </div>
+                        </div>
+                        <div class="form-group change_group" id="div-urlAppName">
+                            <label for="executiveContent" class="col-sm-2 control-label inputName1">URL解析应用名：</label>
+                            <div class="col-sm-10 inputText1">
+                                <input type="text" name="executiveContent" class="form-control" id="urlAppName">
+                            </div>
+                        </div>
+                        <div class="form-group change_group" id="div-urlPackageName">
+                            <label for="executiveContent" class="col-sm-2 control-label inputName1">URL解析包名：</label>
+                            <div class="col-sm-10 inputText1">
+                                <input type="text" name="executiveContent" class="form-control" id="urlPackageName">
+                            </div>
+                        </div>
+                    </div>
+                    <!--节目类型需要输入的数据 结束-->
+                    <!--APP类型需要输入的数据 开始-->
+                    <div class="typeApp">
+                        <div class="form-group change_group">
+                            <label for="AppName" class="col-sm-2 control-label inputName1">App名称：</label>
+                            <div class="col-sm-10 inputText1">
+                                <input type="text" name="AppName" class="form-control" id="AppName" placeholder="请输入App名称...">
+                            </div>
+                        </div>
+                        <div class="form-group change_group">
+                            <label for="appPackage" class="col-sm-2 control-label inputName1">App包名：</label>
+                            <div class="col-sm-10 inputText1">
+                                <input type="text" name="appPackage" class="form-control" id="appPackage" placeholder="请输入App包名...">
+                            </div>
+                        </div>
+                        <div class="form-group change_group">
+                            <label for="AppIntroduce" class="col-sm-2 control-label inputName1">App介绍说明：</label>
+                            <div class="col-sm-10 inputText1">
+                                <textarea class="form-control" name="AppIntroduce" id="AppIntroduce" rows="3" placeholder="请输入App介绍说明..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!--APP类型需要输入的数据 结束-->
+                    <!--资讯类型需要输入的数据 开始-->
+                    <div class="typeInformation">
+                        <div class="form-group change_group">
+                            <label for="AppName" class="col-sm-2 control-label inputName1">资讯主题：</label>
+                            <div class="col-sm-10 inputText1">
+                                <input type="text" name="AppName" class="form-control" id="topicInformation" placeholder="请输入资讯主题...">
+                            </div>
+                        </div>
+                        <div class="form-group change_group">
+                            <label for="detailsInformation" class="col-sm-2 control-label inputName1">资讯详情：</label>
+                            <div class="col-sm-10 inputText1">
+                                <textarea class="form-control" name="detailsInformation" id="detailsInformation" rows="3" placeholder="请输入资讯详情..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!--资讯类型需要输入的数据 结束-->
+                    <!--节目和资讯共用部分 开始-->
+                    <div class="timeValidity">
+                        <div class="form-group change_group">
+                            <label class="col-sm-2 control-label inputName1">推送时间类型:</label>
+                            <div class="col-sm-10 inputText1 timeTypeChange">
+                                <p>
+                                    <code>“实时”类型只能在节目类型或资讯类型中配置一次。</code>
+                                </p>
+                                <label class="radio-inline labelRadio">
+                                    <input class="realTimeBtn" type="radio" name="pushTimeType" checked="checked"  value="1"> 实时
+                                </label>
+                                <label class="radio-inline labelRadio">
+                                    <input type="radio" name="pushTimeType" value="2"> 按时
+                                </label>
+                                <label class="radio-inline labelRadio">
+                                    <input type="radio" name="pushTimeType" value="3"> 定时
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group change_group pushHour">
+                            <label for="pushTimeWord" class="col-sm-2 control-label inputName1">推送时间(分钟)：</label>
+                            <div class="col-sm-10 inputText1">
+                                <input type="text" name="executiveContent" class="form-control" id="pushTimeWord" placeholder="请输入推送时间...">
+                            </div>
+                        </div>
+                        <div class="form-group change_group">
+                            <label for="PushFrequency" class="col-sm-2 control-label inputName1">推送频率(次)：</label>
+                            <div class="col-sm-10 inputText1">
+                                <input type="text" name="executiveContent" class="form-control" id="PushFrequency" placeholder="请输入推送频率...">
+                            </div>
+                        </div>
+                        <div class="form-group change_group">
+                            <label class="col-sm-2 control-label inputName1">消息有效期：</label>
+                            <div class="col-sm-10 inputText1 validityChange">
+                                <label class="radio-inline labelRadio">
+                                    <input type="radio" name="messageValidity" checked="checked"  value="0"> 永久有效
+                                </label>
+                                <label class="radio-inline labelRadio">
+                                    <input type="radio" name="messageValidity" value="5"> 有效天数(天)：<input class="effectiveInput" disabled="disabled" type="text">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--节目和资讯共用部分 结束-->
+                    <div class="form-group change_group">
+                        <label for="specifiedVersion" class="col-sm-2 control-label inputName1">版本号：</label>
+                        <div class="col-sm-10 inputText1">
+                            <input type="text" name="specifiedVersion" class="form-control" id="specifiedVersion" disabled="disabled" placeholder="请输入版本号...">
+                        </div>
+                    </div>
+                </form>
+                <div class="alert alert-warning alert-dismissible fade in addAlert" role="alert"></div>
+            </div>
+            <div class="modal-footer">
+                <div class="form-group change_group add_Button" id="testButton">
+                    <!--<a id="test" >test</a>-->
+                    <button type="button" id="addPushEditionBtn" class="btn btnAdd">添加</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="alertSuccess">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/plupload-2.1.2/js/plupload.full.min.js"></script>
+<script src="js/uploadOSS.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script src="js/bootstrap-paginator.js"></script>
+<script src="js/getUrlParam.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pushContent.js"></script>
+
+
+</body>
+
+
+</html>

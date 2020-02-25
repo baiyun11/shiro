@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>精选推送列表</title>
+
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/bootstrap-theme.css">
+    <!-- 引入Bootstrap-table样式 -->
+    <link rel="stylesheet" href="../../utils/bootstrap-table/bootstrap-table.css">
+    <link rel="stylesheet" href="../../utils/bootstrap-table/bootstrap-editable.css">
+    <link rel="stylesheet" href="index.css">
+
+
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.js"></script>
+    <script src="../../js/response.js"></script>
+    <!-- 引入Bootstrap-table js -->
+    <script src="../../utils/bootstrap-table/bootstrap-table.js"></script>
+    <script src="../../utils/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+    <script src="../../utils/bootstrap-table/bootstrap-table-editable.js"></script>
+    <script src="../../utils/bootstrap-table/bootstrap-editable.min.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+
+    <div class="row">
+        <div class="col-md-12 div-table">
+            <div class="div-table-tools">
+                <div class="page-total">
+                    <div class="content">
+                        <div>精选推送列表</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form">
+                <select class="form-select-name dropdown" id="select-form-name"></select>
+                <button class="form-select-button btn btn-primary" id="select-form-insearch">查询</button>
+            </div>
+            <div class="div-data-table">
+                <table id="table"></table>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

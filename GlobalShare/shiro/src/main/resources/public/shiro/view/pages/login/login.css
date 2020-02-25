@@ -1,0 +1,87 @@
+body{
+background: url(../../images/login.png) !important;
+}
+
+.container{
+    border: 0px solid #d8d8d8;
+    width: 450px;
+    height: 350px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -200px;
+    margin-left: -239px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px #909090;
+    background-color: black;
+    opacity: 0.5;
+
+}
+
+h2{
+    color: #ffffff;
+    text-align: center;
+    margin: 50px 0;
+    font-size: 28px;
+    font-family: '微软雅黑';
+} 
+
+.loginGroup{
+   
+    height: 60px;
+}
+.loginBtn{
+	background:#ff8a00;
+	color:#fff;
+    font-weight:bold;
+    margin-left: 180px;
+    width: 80px;
+    height: 30px;
+    border-radius: 4px;
+    line-height: 22px;
+    font-size: 16px;
+}
+
+.loginBtn:hover,.loginBtn:focus{
+	color:#fff;
+}
+.form-group loginGroup{
+    margin-bottom: 50px;
+    height: 100px;
+}
+
+.form-control{
+    width: 60%;
+    height: 30px;
+    border: solid 1px #ccc;
+}
+.userName,.userPassword{
+    margin-left: 17%;
+    font-size: 16px;
+}
+
+.name{
+    float: left;
+    color: #fff;
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+.passwordLabel{
+    float: left;
+    color: #fff;
+    margin-right: 22px;
+    font-size: 18px;
+}
+
+.pwd{
+    margin-left: 3px;
+}
+
+.btnBox{
+    margin-left: 75px;
+}
+
+.loginButton{
+    width: 310px;
+}

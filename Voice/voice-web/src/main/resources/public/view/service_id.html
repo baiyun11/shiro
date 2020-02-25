@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>配置管理-服务模块管理</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    </head>
+    <body>
+		<div class="headerTop"></div>
+		<div class="container">
+			<div class="row content">
+				<div class="col-xs-3 sidebar left_nav" name="topNavBasis_1">
+					<ul class="nav nav-sidebar yY_left">
+						<li><a href="index.html">词库版本管理</a></li>
+						<li class="left_nav_choose"><a class="left_nav_choose_ys" href="service_type.html">服务模块管理</a></li>
+						<li><a href="functionalAdaptation.html">车型模块管理</a></li>
+						<li><a href="data.html">全局配置管理</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 main">
+					<div class="searchData">
+						<button type="button" class="btn add_btn" data-toggle="modal" data-target="#identifier1" id="addserviceCode">添加服务码</button>
+						<form class="form-search">
+      						<input type="text" class="input-medium search-query" id="search_word" placeholder="请输入要查询的服务码...">
+      						<button type="button" class="btn" id="search_btn">查询</button>
+    					</form>
+    					<a id="backPage" href="javascript:history.go(-1)">返回上一页</a>
+					</div>
+					<div class="table-responsive main_table">
+						<table class="table table-striped">
+							<thead>
+								<tr class="table_title">
+									<th><div class="wordType">服务类型</div></th>
+									<th><div class="service_id">服务码</div></th>
+									<th><div class="decription_service">服务说明</div></th>
+									<th><div class="username">创建人</div></th>
+									<th><div class="date_time">日期</div></th>
+									<th><div class="operation">操作</div></th>
+								</tr>
+							</thead>
+							<tbody id="serviceId">
+								
+							</tbody>
+						</table>
+					</div>
+					<!-- 指定服务类型的分页 -->
+					<nav aria-label="Page navigation"  class="page_navigation">
+						<ul class="pagination" id="page">
+							
+						</ul>
+						<span id="skip">
+							跳转到第
+							<input id="skipPage" type="text" value="" />
+							页
+							<button id="skipBtn" type="button">确定</button>
+						</span>
+						<span id="num_pages"></span>
+						<span id="num_lists"></span>
+					</nav>
+					
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="addIdModalLabel" id="identifier1" data-backdrop="static" data-keyboard="false">
+		  	<div class="modal-dialog modal-lg" role="document">
+		   		<div class="modal-content">
+		      		<div class="modal-header">
+		        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        		<h4 class="modal-title" id="myModalLabel">添加服务码</h4>
+		      		</div>
+		      		<div class="modal-body">
+		        		<form class="form-horizontal" id="addwords">
+		        			<div class="form-group change_group">
+		        				<label for="service_id" class="col-sm-2 control-label inputName1">服务码：</label>
+		        				<div class="col-sm-10 inputText1">
+		        					<input type="text" name="service_id" class="form-control" id="service_id" placeholder="请输入服务码...">
+		        				</div>
+		        			</div>
+		        			<div class="form-group change_group">
+		        				<label for="service_description" class="col-sm-2 control-label inputName1">服务说明：</label>
+		        				<div class="col-sm-10 inputText1">
+		        					<textarea class="form-control" name="service_description" id="service_description" rows="3" placeholder="请输入服务说明..."></textarea>
+		        				</div>
+		        			</div>
+		        			<div class="form-group change_group">
+		        				<label for="service_type2" class="col-sm-2 control-label inputName1">服务类型：</label>
+		        				<div class="col-sm-10 inputText1">
+		        					<input type="text" name="service_type2" class="form-control" id="service_type2" disabled="disabled">
+		        				</div>
+		        			</div>
+		        		</form>
+	        			<div class="alert alert-warning alert-dismissible fade in addAlert" role="alert"></div>
+		      		</div>
+		      		<div class="modal-footer">
+		      			<div class="form-group change_group add_Button">
+        					<button type="button" id="addserviceID" class="btn btnAdd">添加</button>
+	        			</div>
+		      		</div>
+		    	</div>
+		  	</div>
+		</div>
+		
+	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="alertSuccess">
+	  	<div class="modal-dialog modal-sm" role="document">
+	  		<div class="modal-content">
+		      	<div class="modal-body">
+		      	</div>
+	  		</div>
+	 	</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/bootstrap-paginator.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/getUrlParam.js"></script>
+	<script src="js/service_id.js"></script>
+    </body>
+</html>

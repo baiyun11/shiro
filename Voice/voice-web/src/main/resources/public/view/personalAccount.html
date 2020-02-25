@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>个人账户</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/personalAccount.css">
+	
+</head>
+<body>
+
+	<div class="container allBG">
+		<div class="col-xs-3 sidebar left_nav" style="float:left">
+			<div class="head">
+				<div class="head1" >
+					<a class="logo_word" href="index.html">智能语音平台 </a>
+					<span></span>
+				</div>
+				<div class="head2">
+					<p></p>
+				</div>
+				<div class="head3">
+					<a  id="loginOut" class="centerBG">退出</a>
+				</div>
+			</div>
+			
+			<ul class="nav nav-sidebar yY_left">
+				<li class="left_nav_choose">
+					<a class="left_nav_choose_ys" href="personalAccount.html">个人账户</a>
+				</li>
+				<li>
+					<a href="dataAnalysis.html">数据报表</a>
+				</li>
+				<li>
+					<a href="index.html">配置管理</a>
+				</li>
+				<li>
+					<a href="###">推送管理</a>
+				</li>
+				<li>
+					<a href="userManagement.html">系统管理</a>
+				</li>
+				<li>
+					<a href="talkCharts.html">数据统计图</a>
+				</li>
+			</ul>
+			
+		</div>
+
+		<div class="right">
+			<ul>
+				<li class="right1" >
+					<div class="middle1"><img src="images/center_li_bg.png" /></div>
+					<div class="middle1">
+						<h4><strong>登录账号</strong></h4>
+						<br>
+						<font class="listUserName"></font>
+					</div>
+				</li>
+				<li class="middle2" >
+					<div class="middle1"><img src="images/center_li_bg.png" /></div>
+					<div class="middle1">
+						<h4><strong>用户名</strong></h4>
+						<br>
+						<font class="listName"></font>
+					</div>
+				</li>
+				<li class="middle2" >
+					<div class="middle1"><img src="images/center_li_bg.png" /></div>
+					<div class="middle1">
+						<h4><strong>用户权限</strong></h4>
+						<br>
+						<font class="listRoot"></font>
+					</div>
+				</li>
+				<li class="middle2">
+					<div class="middle1"><img src="images/center_li_bg.png" /></div>
+					<div class="middle1">
+						<h4><strong>创始人</strong></h4>
+						<br>
+						<font class="listCreateUser"></font>
+					</div>
+				</li>
+				<li class="middle2">
+					<div class="middle1"><img src="images/center_li_bg.png" /></div>
+					<div class="middle1">
+						<h4><strong>创始时间</strong></h4>
+						<br>
+						<font class="listCreateDate"></font>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="rightModal">
+		<div class="rightTop">
+		<button type="button" data-toggle="modal" data-target="#myModal" id="xgCenterUser">
+		修改个人信息
+		</button>
+		</div>
+		<div class="rightBottom">
+		<a id="backPage" class="centerBP" href="javascript:history.go(-1)">返回上一页</a>
+		</div>
+	  </div>
+	</div>
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="myModal">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">修改个人账号信息</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal allForm">
+						<div class="form-group change_group">
+							<label for="xgAccount" class="col-sm-2 control-label inputName1">登录账号：</label>
+							<div class="col-sm-10 inputText1">
+								<input type="text" class="form-control" id="xgAccount" name="xgAccount" placeholder="请输入登录账号...">
+							</div>
+						</div>
+						<div class="form-group change_group">
+							<label for="xgUserName" class="col-sm-2 control-label inputName1">姓名：</label>
+							<div class="col-sm-10 inputText1">
+								<input type="text" class="form-control" id="xgUserName" name="xgUserName" placeholder="请输入姓名...">
+							</div>
+						</div>
+						<div class="form-group change_group">
+							<label for="xgUserPassword" class="col-sm-2 control-label inputName1">新密码：</label>
+							<div class="col-sm-10 inputText1">
+								<input type="password" class="form-control" id="xgUserPassword" name="xgUserPassword" placeholder="请输入新密码...">
+							</div>
+						</div>
+					</form>
+					<div class="alert alert-warning alert-dismissible fade in" role="alert"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info" id="xgUserBtn">确定修改</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">返回个人账号页面</button>
+				</div>
+			</div>
+		  </div>
+	   </div>
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/personalAccount.js"></script>
+</body>
+</html>

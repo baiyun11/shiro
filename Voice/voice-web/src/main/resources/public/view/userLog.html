@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<title>系统管理-用户管理-日志</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.css">
+	<link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+<div class="headerTop"></div>
+	<div class="container">
+		<div class="row content">
+			<div class="col-xs-3 sidebar left_nav" name="topNavBasis_3">
+				<ul class="nav nav-sidebar yY_left">
+					<li><a href="roleList.html">角色管理</a></li>
+					<li class="left_nav_choose"><a class="left_nav_choose_ys" href="userManagement.html">用户管理</a></li>
+				</ul>
+			</div>
+			<div class="col-xs-9 main">
+				<p class="main-top userLog">
+					<span class="main-top-title">日志</span>
+					<a id="backPage" href="javascript:history.go(-1)">返回上一页</a>
+				</p>
+				<div class="table-responsive main_table">
+					<table class="table table-striped">
+						<thead>
+							<tr class="table_title">
+								<th><div class="oderNum">序号</div></th>
+								<th><div class="commandUser">命令执行者</div></th>
+								<th><div class="commandName">命令名称</div></th>
+								<th><div class="date_time">命令执行时间</div></th>
+								<th><div class="ipAdress">IP地址</div></th>
+							</tr>
+						</thead>
+						<tbody id="logLsit">
+
+						</tbody>
+					</table>
+				</div>
+				<nav aria-label="Page navigation" class="page_navigation">
+					<ul class="pagination" id="page">
+					</ul>
+					<span id="skip">
+						跳转到第
+						<input id="skipPage" type="text" value="" />
+						页
+						<button id="skipBtn" type="button">确定</button>
+					</span>
+					<span id="num_pages"></span>
+					<span id="num_lists"></span>
+				</nav>
+			</div>
+		</div>
+	</div>
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/bootstrap-paginator.js"></script>
+	<script src="js/getUrlParam.js"></script>
+	<script src="js/userLog.js"></script>
+	<script src="js/common.js"></script>
+</body>
+</html>

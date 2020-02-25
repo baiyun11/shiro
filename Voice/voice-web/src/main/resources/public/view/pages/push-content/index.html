@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>推送内容管理</title>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/bootstrap-theme.css">
+    <!-- 引入Bootstrap-table样式 -->
+    <link rel="stylesheet" href="../../utils/bootstrap-table/bootstrap-table.css">
+    <link rel="stylesheet" href="../../utils/bootstrap-table/bootstrap-editable.css">
+    <link rel="stylesheet" href="index.css">
+
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.js"></script>
+    <script src="../../js/response.js"></script>
+    <script src="../../js/getUrlParam.js"></script>
+    <!-- 引入Bootstrap-table js -->
+    <script src="../../utils/bootstrap-table/bootstrap-table.js"></script>
+    <script src="../../utils/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+    <script src="../../utils/bootstrap-table/bootstrap-table-editable.js"></script>
+    <script src="../../utils/bootstrap-table/bootstrap-editable.min.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="page-total">
+        <div class="page-total-content">推送内容列表</div>
+    </div>
+
+    <div class="nav-div">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#jmType" id="jmType" role="tab" data-toggle="tab">节目类型</a></li>
+            <li role="presentation"><a href="#appType" id="appType" role="tab" data-toggle="tab">APP类型</a></li>
+            <li role="presentation"><a href="#messages" id="zxType" role="tab" data-toggle="tab">咨询类型</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active">
+                <div class="page-table">
+                    <table id="table"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toolbar">
+        <div class="btn-group">
+            <button id="add" type="button" class="btn btn-primary" title="添加推送内容">
+                <span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;添加推送内容
+            </button>
+        </div>
+        <div class="btn-group btn-back">
+            <a type="button" class="btn btn-default" title="返回上一页" href="../push-version/index.html">返回上一页</a>
+        </div>
+    </div>
+
+</body>
+</html>

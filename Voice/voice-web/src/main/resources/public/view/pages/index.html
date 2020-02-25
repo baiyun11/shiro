@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>新版网页架构</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/data.css">
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/navs.js"></script>
+    <script src="../js/response.js"></script>
+
+    <script>
+        $(function(){
+            //获取当前系统时间
+            var show=document.getElementById("date_now");
+            setInterval(function(){
+                var timenow=new Date();
+                var tYear=timenow.getFullYear();
+                var tMonth=timenow.getMonth()+1 <10 ? "0"+(timenow.getMonth()+1):timenow.getMonth()+1;
+                var tDate=timenow.getDate() <10 ? "0"+timenow.getDate():timenow.getDate();
+                var tHour=timenow.getHours()<10 ? "0"+timenow.getHours():timenow.getHours();
+                var tMinutes=timenow.getMinutes()<10 ? "0"+timenow.getMinutes():timenow.getMinutes();
+                var tSeconds=timenow.getSeconds()<10 ? "0"+timenow.getSeconds():timenow.getSeconds();
+                var t=tYear+"-"+tMonth+"-"+tDate+" "+tHour+":"+tMinutes+":"+tSeconds;
+                show.innerHTML=t;
+            },1000)
+
+            //当前用户
+            var str="";
+            str = sessionStorage.obj;
+            if(str==null){
+                window.location.href="login.html";
+            }else{
+                var obj = $.parseJSON(str);
+                if(obj.springProfilesActiveEnum === "product"){
+                    $('#springProfilesActiveEnum').text("正式版");
+                }else if(obj.springProfilesActiveEnum === "test"){
+                    $('#springProfilesActiveEnum').text("测试版");
+                }else if(obj.springProfilesActiveEnum === "development"){
+                    $('#springProfilesActiveEnum').text("开发版");
+                };
+                $("#loginUserName").html(obj.name+'<span class="caret"></span>');
+            }
+
+            //退出
+            $("#loginOut").click(function(){
+                $.ajax({
+                    url: "../../sys/subject/logout",
+                    type: "post",
+                    dataType:'json',
+                    contentType:'application/json',
+                    success: function(data){
+                        if(resResult(data))
+                            window.location.href="../login.html";
+                    },
+                    error:function(data){
+                    }
+                });
+            });
+
+        })
+    </script>
+</head>
+<body>
+    <div class="container navbar-inverse">
+        <div class="navbar-header yY_top_logo">
+            <a class="logo_word" href="index.html">智能语音平台 </a>
+            <span id="springProfilesActiveEnum"></span>
+            <br>
+            <span><a href="../index.html">切换旧版本</a></span>
+        </div>
+        <!-- topNav -->
+        <ul class="nav navbar-nav yY_top_nav" id="topNav"></ul>
+
+        <ul class="nav navbar-nav navbar-right yY_top_ps">
+            <li class="dropdown">您好，
+                <a id="loginUserName" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="personalAccount.html">个人中心</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><button id="loginOut" type="button" class="btn btn-danger">退&nbsp;&nbsp;出</button></li>
+                </ul>
+            </li>
+            <li id="date_now"></li>
+        </ul>
+    </div>
+
+    <div class="left_nav" id="leftNav"></div>
+    <div class="main-container" id="main"></div>
+
+</body>
+</html>

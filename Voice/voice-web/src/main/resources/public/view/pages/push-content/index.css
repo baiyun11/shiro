@@ -1,0 +1,68 @@
+.page-total{
+    width: 98%;
+    height: 48px;
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: #1abc9c;
+    box-shadow: 0px 2px 3px #cad3d7;
+}
+
+.page-total-content{
+    width: 99.7%;
+    height: 48px;
+    margin-left: 5px;
+    padding-top: 14px;
+    padding-left: 20px;
+    font-size: 15px;
+    color: #6f6f6f;
+    background-color: #ecf0f1;
+
+}
+
+.nav-div{
+    width: 98%;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.page-table{
+    width: 100%;
+    height: auto;
+}
+
+.glyphicon{
+    top: 2px;
+}
+
+.deletePush:hover{
+    text-decoration: none;
+}
+.deletePush span{
+    padding: 3px 7px;
+    font-size: 14px;
+    border-radius: .1em;
+}
+
+.updatePush:hover{
+    text-decoration: none;
+}
+.updatePush span{
+    padding: 3px 7px;
+    font-size: 14px;
+    border-radius: .1em;
+}
+
+.btn-back{
+    margin-left: 1089px;
+    float: right
+}
+
+.table-col{
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+

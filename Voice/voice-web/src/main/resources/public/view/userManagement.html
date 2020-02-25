@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<title>系统管理-用户管理</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/bootstrap-select.min.css">
+	<link rel="stylesheet" href="css/skins/all.css">
+</head>
+<body>
+<div class="headerTop"></div>
+	<div class="container">
+		<div class="row content">
+			<div class="col-xs-3 sidebar left_nav" name="topNavBasis_3">
+				<ul class="nav nav-sidebar yY_left">
+					<li><a href="roleList.html">角色管理</a></li>
+					<li class="left_nav_choose"><a class="left_nav_choose_ys" href="userManagement.html">用户管理</a></li>
+				</ul>
+			</div>
+			<div class="col-xs-9 main">
+				<p class="main-top">
+					<button type="button" class="btn add_btn" id="addUser" data-toggle="modal" data-target=".bs-example-modal-lg">添加用户</button>
+					<a id="backPage" href="javascript:history.go(-1)">返回上一页</a>
+				</p>
+				<div class="table-responsive main_table">
+					<table class="table table-striped">
+						<thead>
+							<tr class="table_title">
+								<th><div class="oderNum">序号</div></th>
+								<th><div class="addName">登录账号</div></th>
+								<th><div class="fullName">姓名</div></th>
+								<th><div class="rootName">用户角色</div></th>
+								<th><div class="operation2">操作</div></th>
+							</tr>
+						</thead>
+						<tbody id="userLsit">
+
+						</tbody>
+					</table>
+				</div>
+				<nav aria-label="Page navigation" class="page_navigation">
+					<ul class="pagination" id="page">
+
+					</ul>
+					<span id="skip"> 跳转到第 <input id="skipPage" type="text"
+						value="" /> 页
+						<button id="skipBtn" type="button">确定</button>
+					</span> <span id="num_pages"></span> <span id="num_lists"></span>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modalUser" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">添加新用户</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal" id="addEdition">
+						<div class="form-group change_group">
+							<label for="account" class="col-sm-2 control-label inputName1">登录账号：</label>
+							<div class="col-sm-10 inputText1">
+								<input type="text" class="form-control" id="account" name="account" placeholder="请输入登录账号...">
+							</div>
+						</div>
+						<div class="form-group change_group">
+							<label for="userName" class="col-sm-2 control-label inputName1">姓名：</label>
+							<div class="col-sm-10 inputText1">
+								<input type="text" class="form-control" id="userName" name="userName" placeholder="请输入姓名...">
+							</div>
+						</div>
+	        			<div class="form-group change_group">
+	        				<label class="col-sm-2 control-label inputName1">用户角色：</label>
+	        				<div class="col-sm-10 inputText1 userRoles">
+
+	        				</div>
+	        			</div>
+						<!--<div class="form-group change_group">-->
+							<!--<label for="userPassword" class="col-sm-2 control-label inputName1">密码：</label>-->
+							<!--<div class="col-sm-10 inputText1">-->
+								<!--<input type="password" class="form-control" id="userPassword" name="userPassword" placeholder="请输入密码...">-->
+							<!--</div>-->
+						<!--</div>-->
+					</form>
+					<div class="alert alert-warning alert-dismissible fade in" role="alert"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info" id="addUserBtn">添加</button>
+					<button type="reset" class="btn btn-warning" id="resetBtn">重置</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">返回用户管理页面</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="alertSuccess">
+	  	<div class="modal-dialog modal-sm" role="document">
+	  		<div class="modal-content">
+		      	<div class="modal-body">
+		      	</div>
+	  		</div>
+	 	</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/bootstrap-select.min.js"></script>
+	<script src="js/bootstrap-paginator.js"></script>
+	<script src="js/icheck.min.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/userManagement.js"></script>
+</body>
+</html>

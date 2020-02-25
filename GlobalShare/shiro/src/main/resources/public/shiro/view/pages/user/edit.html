@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>修改用户信息</title>
+
+    <link rel="stylesheet" href="../../utils/LayUI/css/layui.css" media="all">
+    <link rel="stylesheet" href="edit.css">
+
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../utils/LayUI/layui.js"></script>
+    <script src="../../js/response.js"></script>
+    <script src="edit.js"></script>
+</head>
+<body>
+
+    <div class="solid">
+        <div class="title"><h3>修改用户信息</h3></div>
+        <form class="layui-form" lay-filter="edit-form">
+            <div class="layui-form-item account">
+                <label class="layui-form-label">登录账号：</label>
+                <div class="layui-input-block account1">
+                    <input type="text" name="account" lay-verify="title" autocomplete="off" class="layui-input" id="userAcount">
+                </div>
+            </div>
+            <div class="layui-form-item username">
+                <label class="col-sm-2 layui-form-label">姓名：</label>
+                <div class="col-sm-10 layui-input-block username1">
+                    <input type="text" name="username" lay-verify="title" autocomplete="off" class="layui-input" id="userName">
+                </div>
+            </div>
+            <div class="layui-form-item permissions" >
+                <label class="layui-form-label">选择角色：</label>
+                <div class="layui-input-block" id="management"></div>
+            </div>
+        </form>
+
+        <div class="layui-form-item submit">
+            <div class="layui-input-block">
+                <button class="layui-btn" id="submit">立即提交</button>
+                <button class="layui-btn layui-btn-primary" id="reset">重置</button>
+                <a class="layui-btn layui-btn-normal" href="userList.html">返回上一页</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
