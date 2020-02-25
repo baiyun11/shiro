@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" name="AppMarketLog4j">
+    <Properties>
+        <Property name="baseDir">/data/log/tomcat/background_test</Property>
+        <Property name="pattern">%d{ISO8601} [%level] %msg%n</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="NEUTRAL"/>
+            <PatternLayout pattern="${pattern}"/>
+        </Console>
+        <RollingFile name="InfoLog" filePermissions="rw-rw-rw-" fileName="${baseDir}/runtime.info.log"
+                     filePattern="${baseDir}/$${date:yyyy-MM}/runtime.info.%d{yyyy-MM-dd}.log">
+            <Filters>
+                <ThresholdFilter level="fatal" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="error" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="warn" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <PatternLayout pattern="${pattern}"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="100 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="100">
+                <Delete basePath="${baseDir}" maxDepth="2">
+                    <IfFileName glob="*/runtime.*.log">
+                    </IfFileName>
+                    <IfLastModified age="7d">
+                    </IfLastModified>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+        <RollingFile name="ErrorLog" filePermissions="rw-rw-rw-" fileName="${baseDir}/runtime.error.log"
+                     filePattern="${baseDir}/$${date:yyyy-MM}/runtime.error.%d{yyyy-MM-dd}.log">
+            <Filters>
+                <ThresholdFilter level="warn" onMatch="ACCEPT" onMismatch="DENY"/>
+                <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+                <ThresholdFilter level="fatal" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <PatternLayout pattern="${pattern}"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="100 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="100">
+                <Delete basePath="${baseDir}" maxDepth="2">
+                    <IfFileName glob="*/runtime.*.log"/>
+                    <IfLastModified age="30d"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="LOG" level="info" additivity="false">
+        <AppenderRef ref="InfoLog"/>
+        <AppenderRef ref="ErrorLog"/>
+        </Logger>
+        <Root level="error">
+            <AppenderRef ref="ErrorLog"/>
+        </Root>
+    </Loggers>
+</Configuration>
